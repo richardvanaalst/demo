@@ -1,0 +1,682 @@
+/**
+ *   Basic page layout
+ *   Header, navigation, main, footer
+*/
+
+
+
+/**
+ *  Columns having spacing and line underneath
+*/
+
+@media only screen and (max-width: 991px) {
+
+	.row.main > [class*="col-"]:after {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFElEQVQIW2M8f/3+f0NNRUYGIAAAKCoEAu10+q0AAAAASUVORK5CYII=);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Rows having spacing and line underneath
+*/
+
+@media only screen and (min-width: 992px) {
+
+	.row.main:after {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFElEQVQIW2M8f/3+f0NNRUYGIAAAKCoEAu10+q0AAAAASUVORK5CYII=);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **\
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+|*                      HEADER                       *|
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+\** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+
+
+/**
+ * Header
+*/
+
+/*#header {}*/
+
+
+
+
+
+
+
+
+
+/**
+ * Logo
+*/
+
+#logo img {
+	vertical-align: baseline;
+	border-radius: 0;
+}
+
+#logo span {
+	display: inline-block;
+	max-width: 120px;
+	position: relative;
+	top: -4px;
+	margin-left: 8px;
+	font-size: 1.125em; /* 18/16 */
+	font-weight: 300;
+	line-height: 1;
+	color: #f60;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	#logo {
+		top: 12px;
+		left: 11px;
+	}
+
+	#logo img {
+		height: 80px;
+	}
+
+	#logo span {
+		max-width: none;
+		top: -18px;
+		margin-left: 17px;
+		font-size: 2.25em; /* 36/16 */
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Toggle mobile menus
+*/
+
+#skip a {
+	font: 0/0 a;
+	color: transparent;
+	background-image: url("../../images/sprite.png");
+}
+
+#show-search a        { background-position:   10px -86px; }
+#show-search a.active { background-position:  -22px -86px; }
+
+#show-nav a           { background-position: -120px -86px; }
+#show-nav a.active    { background-position: -152px -86px; }
+
+
+
+
+
+
+
+
+
+/**
+ *  Navigation
+*/
+
+#navigation {
+	background-color: #009;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Channels
+*/
+
+#channels-mobile button {
+	color: #fff;
+	background-color: transparent;
+	border-color: #fff;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	#channels {
+		left: 82px;
+	}
+
+	#channels .active a {
+		color: #fff;
+		background-color: #009;
+		border-radius: 0 0 4px 4px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Main menu
+*/
+
+#menu {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFElEQVQIW2M8f/3+f0NNRUYGIAAAKCoEAu10+q0AAAAASUVORK5CYII=) left bottom repeat-x;
+	border: 0;
+}
+
+#menu a {
+	color: #fff;
+	border-radius: 5px;
+}
+
+#menu a:hover,
+#menu a:focus {
+	color: #009;
+	background-color: #eaeef4;
+}
+
+#menu li.active a {
+	color: #f60;
+}
+
+#menu li.user a:hover:before,
+#menu li.user a:focus:before {
+	background-position: -48px 0;
+}
+
+#menu li.user.active a:before {
+	background-position: -144px -16px;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	#menu {
+		background: none;
+		border-radius: 5px 5px 0 0;
+	}
+
+	/* Line between items */
+	#menu li:not(:first-child):before {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAADCAYAAABS3WWCAAAAE0lEQVQIW2NkAALG89fv/2cEsQAaPwOIxmexHAAAAABJRU5ErkJggg==);
+	}
+
+	#menu a {
+		border-radius: 4px 4px 0 0;
+	}
+
+	#menu a:hover,
+	#menu a:focus {
+		color: #f60;
+		background-color: #fff;
+	}
+
+
+
+	/* .no-touch: iPad requires double tap when using
+	 * li:hover (and :before/:after)
+	 * http://www.nczonline.net/blog/2012/07/05/ios-has-a-hover-problem/
+	*/
+	#menu,
+	.no-touch #menu li:hover:before {
+		background: #009;
+	}
+
+
+
+	/* Curved border around active item */
+	#menu li.active:before,
+	#menu li.active:after,
+	.no-touch #menu li.active:hover:before {
+		width: 5px;
+		height: 45px;
+		position: absolute;
+		bottom: 0;
+		z-index: 1;
+		content: "";
+		background: #009 url("../../images/sprite.png") no-repeat;
+	}
+
+	#menu li.active:before,
+	.no-touch #menu li.active:hover:before {
+		left: 0;
+		right: auto;
+		background-position: -187px -19px;
+	}
+
+	#menu li.active:after {
+		left: auto;
+		right: -1px;
+		background-position: -176px -19px;
+	}
+
+
+
+	#menu li.user a:hover:before,
+	#menu li.user a:focus:before,
+	#menu li.user.active a:before {
+		background-position: -144px -16px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Meta
+*/
+
+#meta {
+	top: 17px;
+}
+
+#meta a {
+	font-size: 0.8125em;
+	color: #fff;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	#meta li {
+		padding: 0 9px;
+	}
+
+	#meta a {
+		color: #009;
+	}
+
+	#meta a:hover,
+	#meta a:focus {
+		color: #f60;
+	}
+
+	#meta a:before {
+		display: inline-block;
+		width: 4px;
+		height: 7px;
+		margin-right: 6px;
+		margin-bottom: 1px;
+		content: "";
+		background-image: url("../../images/sprite.png");
+		background-position: -16px -8px;
+	}
+
+	#meta a:hover:before,
+	#meta a:focus:before {
+		background-position: -16px 0;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Search
+ *  See search.css for Google Custom Search Engine
+*/
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **\
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+|*                      CONTENT                      *|
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+\** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+
+
+/**
+ *  Top (carousel/visual)
+*/
+
+#top {
+	background-color: #f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Main wrapper
+*/
+
+@media only screen and (min-width: 992px) {
+
+	#main {
+		border-radius: 0 0 5px 5px;
+	}
+
+}
+
+
+
+.well {
+	background-color: #f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **\
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+|*                      FOOTER                       *|
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+\** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+
+
+/**
+ *  Footer general
+*/
+
+/*#footer {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  Footer top
+*/
+
+
+/*  Collapsible lists in footer  */
+@media only screen and (max-width: 991px) {
+
+	#footer-top h6 {
+		font-size: 1.0625em; /* 17/16 */
+	}
+
+	/* Arrow behind the header */
+	#footer-top .panel h6:after {
+		width: 7px;
+		height: 4px;
+		top: 16px;
+		content: "";
+		background-image: url("../../images/sprite.png");
+		background-position: -32px -8px;
+	}
+
+	#footer-top .panel.in h6:after {
+		background-position: -40px 0;
+	}
+
+}
+
+
+
+/**
+ * Icons in front of list items
+*/
+
+#footer-top .links a:before,
+#footer-top .contact a:before,
+#footer-top .social a {
+	display: inline-block;
+	content: "";
+	background-image: url("../../images/sprite.png");
+}
+
+
+
+#footer-top .links a:before {
+	width: 8px;
+	height: 8px;
+	margin-right: 7px;
+	margin-bottom: 1px;
+	background-position: 0 0;
+}
+
+#footer-top .links a:hover:before,
+#footer-top .links a:focus:before {
+	background-position: 0 -8px;
+}
+
+
+
+#footer-top .contact a:before {
+	width: 16px;
+	height: 16px;
+	margin-right: 9px;
+	margin-bottom: -3px;
+	background-position: -64px 0;
+}
+
+#footer-top .contact a.email:before       { background-position:  -64px 0; }
+#footer-top .contact a.email:hover:before,
+#footer-top .contact a.email:focus:before { background-position:  -64px -16px; }
+
+#footer-top .contact a.phone:before       { background-position:  -80px 0; }
+#footer-top .contact a.phone:hover:before,
+#footer-top .contact a.phone:focus:before { background-position:  -80px -16px; }
+
+#footer-top .contact a.faq:before         { background-position:  -96px 0; }
+#footer-top .contact a.faq:hover:before,
+#footer-top .contact a.faq:focus:before   { background-position:  -96px -16px; }
+
+#footer-top .contact a.press:before       { background-position: -112px 0; }
+#footer-top .contact a.press:hover:before,
+#footer-top .contact a.press:focus:before { background-position: -112px -16px; }
+
+
+
+#footer-top .social li {
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+#footer-top .social a {
+	width: 35px;
+	height: 35px;
+	font: 0/24px a;
+	color: transparent;
+	border-radius: 5px;
+}
+
+#footer-top .social a.rss {
+	background-color: #ff6600; /* RSS orange, no theme colour */
+	background-position: 8px -57px;
+}
+
+#footer-top .social a.twitter {
+	background-color: #00acee; /* Twitter blue, no theme colour */
+	background-position: -25px -57px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Bottom
+*/
+
+#footer-bottom {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFElEQVQIW2M8f/3+f0NNRUYGIAAAKCoEAu10+q0AAAAASUVORK5CYII=) repeat-x;
+	border: 0;
+}
+
+#footerlegal {
+	color: #777;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	#footerlinks li:not(:first-child) {
+		border-color: #cfd7df;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **\
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+|*                   SPECIFIC PAGES                  *|
+|** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **|
+\** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+
+
+/**
+ *  Same line on subnav on the sub-home page
+*/
+
+@media only screen and (max-width: 991px) {
+
+	.subhome-page > .row.main:first-of-type:after {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFElEQVQIW2M8f/3+f0NNRUYGIAAAKCoEAu10+q0AAAAASUVORK5CYII=);
+	}
+
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+	.subhome-page .subnav [class*="col-"]:after {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAFElEQVQIW2M8f/3+f0NNRUYGIAAAKCoEAu10+q0AAAAASUVORK5CYII=);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  T02 Subhome & T11 Actiepagina
+*/
+
+@media only screen and (min-width: 992px) {
+
+	/* section.main-content overlapping top-visual */
+	.subhome-page,
+	.action-page {
+		border-radius: 5px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Hi DPI
+*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+	#skip a,
+	#footer-top .panel h6:after,
+	#footer-top .links a:before,
+	#footer-top .contact a:before,
+	#footer-top .social a,
+	.sprite {
+		background-image: url("../../images/sprite@2x.png");
+		background-size: 192px auto;
+	}
+
+}
+
+
+
+
+
+
+
+

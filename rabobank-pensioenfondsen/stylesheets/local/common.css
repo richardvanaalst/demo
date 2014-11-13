@@ -1,0 +1,226 @@
+/**
+ *   Helper classes, common custom elements
+*/
+
+
+
+/**
+ *  Buttons with arrow on the right
+*/
+
+.button {
+	padding-right: 48px;
+	position: relative;
+	color: #fff;
+	background-color: #009;
+	border-radius: 5px 10px 10px 5px;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+
+
+@media screen and (min-width: 650px) {
+
+	.button {
+		padding-left: 20px;
+		padding-right: 56px;
+	}
+
+}
+
+
+
+/* Orange block with white arrow */
+.button:before,
+.button:after {
+	display: block;
+	position: absolute;
+	content: "";
+}
+
+/* Orange block */
+.button:before {
+	width: 36px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	background-color: #f60;
+	border-left: 1px solid #fff;
+	border-radius: 0 5px 5px 0;
+}
+
+/* White arrow */
+.button:after {
+	width: 7px;
+	height: 7px;
+	top: 50%;
+	margin-top: -4px;
+	right: 15px;
+	background-image: url("../../images/sprite.png");
+	background-position: 0 -16px;
+}
+
+
+
+.button:hover,
+.button:focus {
+	color: #fff;
+	background-color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  CTA links
+*/
+
+a.action {
+	/*color: royalblue;*/
+}
+
+a.action:hover,
+a.action:focus {
+	color: #f60;
+}
+
+
+
+/*  With arrow in front or behind, choose one:  */
+
+/* Arrow in front */
+.action:before {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-right: 8px;
+	margin-bottom: 1px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: 0 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Back to overview link
+*/
+
+.back a:before {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-right: 8px;
+	margin-bottom: 1px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: -8px 0;
+}
+
+.content + .back {
+	border-top-style: dotted;
+	border-color: #cfd7df;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Lists
+*/
+
+.links > ul,
+ul.links {
+	list-style: none;
+}
+
+.links > ul li:before,
+ul.links li:before {
+	width: 8px;         /* total width + ... */
+	height: 8px;
+	margin-left: -18px;
+	margin-right: 10px; /* ... margin = 18px */
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: 0 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  User - "Mijn Pensioen"
+*/
+
+.user a:before {
+	display: inline-block;
+	width: 16px;
+	height: 12px;
+	margin-right: 2px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: -144px 0;
+}
+
+.user a:hover:before,
+.user a:focus:before,
+.user.active a:before {
+	background-position: -144px -16px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Hi DPI
+*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+	.action:before,
+	.action:after,
+	.back a:before,
+	.links > ul li:before,
+	ul.links li:before,
+	.user a:before,
+	.sprite {
+		background-image: url("../../images/sprite@2x.png");
+		background-size: 192px auto;
+	}
+
+}
+
+
+
+
+
+
+
+

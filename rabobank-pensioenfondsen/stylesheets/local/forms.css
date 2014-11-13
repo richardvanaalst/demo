@@ -1,0 +1,259 @@
+/**
+ *   Styling for forms and form elements
+*/
+
+
+
+/**
+ *  Global styling
+*/
+
+/*form {}*/
+
+
+
+/*fieldset {}*/
+
+
+
+legend {
+	color: #009;
+}
+
+
+
+/* Warning: Keep in mind that labels are used as text next to checkboxes/radio buttons */
+/*label {}*/
+
+
+
+input,
+select,
+textarea {
+	border-color: #999;
+	border-radius: 5px;
+}
+
+
+
+input:focus,
+select:focus,
+textarea:focus {
+	border-color: #009;
+}
+
+
+
+/*textarea {}*/
+
+
+
+/*select {}*/
+
+/*option {}*/
+
+
+
+/*input[type="checkbox"],
+input[type="radio"] {}*/
+
+/*input[type="checkbox"] + label,
+input[type="radio"] + label {}*/
+
+
+
+/*input[type="file"] {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  Global styling for Tridion's generated forms
+*/
+
+fieldset select {
+	background: url("../../images/formsprite.png") right top no-repeat;
+}
+
+fieldset li > em > span,
+.messagebox.error {
+	color: red !important; /* !important because of generated inline styling */
+}
+
+fieldset span.help {
+	color: #777;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Specific styling for Tridion's generated forms
+*/
+
+/*  Required asterisk (*)  */
+.container-form abbr[title] {
+	font-size: 1.125em;
+	color: #009;
+}
+
+
+
+
+
+
+
+
+
+/* Align form elements in 3 rows, 2 columns
+ * label
+ * input - error
+ * help
+*/
+
+@media only screen and (min-width: 650px), only screen and (min-width: 1140px) {
+
+	fieldset li {
+		margin-top: 0;
+	}
+
+	.container-form li > label,
+	.container-form input[type="text"],
+	.container-form input[type="file"],
+	.container-form select,
+	.container-form textarea,
+	.container-form span.radioButtonList,
+	.container-form span.help,
+	.container-form abbr[title],
+	.container-form li > em {
+		top: auto;
+		left: auto;
+		clear: left;
+		margin: 0;
+	}
+
+	.container-form input[type="text"],
+	.container-form input[type="file"],
+	.container-form select,
+	.container-form textarea,
+	.container-form span.radioButtonList {
+		margin-right: 25px;
+	}
+
+	.container-form li > label {
+		width: auto;
+		line-height: 35px;
+	}
+
+	.container-form span.help {
+		float: left;
+		clear: none;
+		margin-top: 3px;
+	}
+
+	.container-form abbr[title] {
+		position: absolute;
+		top: 35px;
+		left: 284px;
+	}
+
+	.container-form textarea ~ abbr[title] {
+		left: 468px;
+	}
+
+	.container-form span.radioButtonList ~ abbr[title] {
+		top: 3px;
+	}
+
+	.container-form li > em {
+		position: relative;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Specific styling for Tridion's generated login
+*/
+
+/*.container-app {}*/
+
+
+
+
+
+
+
+
+
+
+/**
+ *  Submit button
+ *  forms: .controls
+ *  login: .buttonbar
+*/
+
+.controls input[type="submit"],
+.buttonbar input[type="submit"] {
+	padding-right: 56px;
+	color: #fff;
+	background: #009 url("../../images/formsprite.png") right bottom no-repeat;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+.controls input[type="submit"]:hover,
+.controls input[type="submit"]:focus,
+.buttonbar input[type="submit"]:hover,
+.buttonbar input[type="submit"]:focus {
+	background-color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Hi DPI
+*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+	fieldset select,
+	.controls input[type="submit"],
+	.buttonbar input[type="submit"],
+	.formsprite {
+		background-image: url("../../images/formsprite@2x.png");
+		background-size: 35px auto;
+	}
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,230 @@
+/**
+ *   C19 Google site search
+ *
+ *   Google Custom Search Engine control panel setup
+ *   Layout:       Full width
+ *   Theme:        Minimalist
+ *   Customize:    Disable Google Branding
+*/
+
+
+
+/**
+ *  Google CSE wrappers
+ *  #___gcse_0    Searchfield in header
+ *  #___gcse_1    Searchfield on search page
+ *  #___gcse_2    Search results
+*/
+
+/*#___gcse_0,
+#___gcse_1,
+#___gcse_2 {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  Search form
+
+form.gsc-search-box
+	table.gsc-search-box
+		td.gsc-input
+			input.gsc-input
+		td.gsc-search-button
+			input[button].gsc-search-button
+		td.gsc-clear-button
+			div.gsc-clear-button
+*/
+
+#search form.gsc-search-box,
+#main form.gsc-search-box {
+	padding: 0;
+	margin-bottom: 0;
+}
+
+#search table.gsc-search-box td.gsc-input,
+#main table.gsc-search-box td.gsc-input {
+	padding-right: 0;
+}
+
+
+
+#search input.gsc-input,
+#main input.gsc-input {
+	width: 100%;
+	height: 27px;
+	padding: 0 10px 0 14px;
+	margin: 0;
+	border-right: none;
+}
+
+
+
+#search input.gsc-search-button,
+#main input.gsc-search-button {
+	min-width: 1px; /* override Google minimalist theme */
+	margin: 0;
+	font-size: 1.07692307692308em; /* 14/13 */
+	font-weight: normal;
+	border: 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Search results
+*/
+
+#main .gsc-control-cse {
+	padding: 0;
+}
+
+
+
+/*  Info  */
+#main .gsc-result-info {
+	padding-left: 0;
+}
+
+
+
+/*  Wrappers  */
+#main .gsc-results {
+	margin-top: 0;
+}
+
+#main .gsc-result {
+	padding: 1.5em 0 2em;
+	margin-bottom: 0;
+	border-left: none;
+	border-bottom: 1px solid;
+}
+
+
+
+/*  Title  */
+#main .gsc-result .gs-title,
+#main .gsc-result .gs-title b {
+	height: auto;
+	text-decoration: none;
+}
+
+#main .gsc-result a.gs-title {
+	font-size: 1.5em; /* 24/16 */
+	font-weight: 300;
+}
+
+#main .gsc-result a.gs-title b {
+	font-size: 1em; /* 24/24 */
+	font-weight: 400;
+}
+
+#main .gsc-result a.gs-title:hover,
+#main .gsc-result a.gs-title:focus,
+#main .gsc-result a.gs-title:hover b,
+#main .gsc-result a.gs-title:focus b {}
+
+
+
+
+
+
+
+
+
+/*  No results  */
+#main .gs-no-results-result .gs-snippet {
+	margin: 0;
+	border: none;
+	background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/*  Misspelled and suggestion  */
+#main .gs-spelling {
+	font-size: 1.23076923076923em; /* 16/13 */
+}
+
+#main .gs-spelling:first-child {
+	font-weight: 700;
+}
+
+#main .gs-spelling i {
+	font-style: normal;
+}
+
+#main .gs-spelling-original b {
+	font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+/*  Result content  */
+#main .gsc-result .gs-snippet {
+	font-size: 1.28571428571429em; /* 18/14 */
+	line-height: 1.44444444444444; /* 26/18 */
+}
+
+
+
+/*  Url  */
+#main .gsc-result .gs-visibleUrl {
+	font-size: 1.23076923076923em; /* 16/13 */
+	font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+/*  Pager  */
+#main .gsc-results .gsc-cursor-box {
+	padding: 0;
+	margin: 23px 0 0 -5px;
+	font-size: 1.07692307692308em; /* 14/13 */
+}
+
+#main .gsc-results .gsc-cursor-box .gsc-cursor-page {
+	padding: 0 5px;
+	text-decoration: none;
+	text-shadow: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+

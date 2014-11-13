@@ -1,0 +1,310 @@
+/**
+ *  IE8 and lower
+ *
+ *  Modernizr classes
+ *    no-rgba
+ *    no-backgroundsize
+ *    no-opacity          filter
+ *    no-cssgradients
+ *
+ *    fontface            only EOT fonts
+ *    generatedcontent    only single colon :before, not ::before
+*/
+
+
+
+/* Hide all content untill Respond.js is loaded, to prevent FOUC */
+body {
+	display: none;
+}
+
+@media only screen and (min-width: 1px) {
+
+	body {
+		display: block;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+html {
+	background-image: url("../../images/background.png");
+	background-repeat: repeat-x;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Forms
+ * forms.css
+*/
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+fieldset input[type="file"],
+fieldset select,
+fieldset span.radioButtonList {
+	width: 276px;
+}
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+fieldset input[type="file"],
+fieldset select {
+	line-height: 35px !important;
+}
+
+fieldset input[type="file"] {
+	border: 1px solid #777;
+}
+
+fieldset textarea {
+	width: 460px;
+}
+
+
+
+
+
+
+
+
+
+/* Rows
+ * layout.css
+*/
+
+.subhome-page,
+.action-page {
+	min-width: 774px !important;
+	float: none !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+
+
+.row.main.last {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.row.main.last:after {
+	background: none;
+}
+
+
+
+
+
+
+
+
+
+/* Carousel indicators
+ * components.css
+*/
+
+.carousel-indicators li.active:before {
+	width: 7px;
+	height: 7px;
+	top: 3px;
+	left: 3px;
+}
+
+
+
+
+
+
+
+
+
+/* Video modal
+ * components.css
+*/
+
+.modal-backdrop.in {
+	filter: alpha(opacity=75);
+}
+
+.modal.video-lightbox .modal-dialog {
+	width: 853px !important;
+	margin: 30px auto 0 !important;
+}
+
+
+
+
+
+
+
+
+
+/* Google search input field
+ * search.css
+*/
+
+#search input.gsc-input,
+#main input.gsc-input {
+	padding-top: 4px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ * Logo
+ * local/layout.css
+*/
+
+#siteLabel span {
+	top: -48px !important;
+	margin-left: 86px !important;
+	font-size: 2em !important; /* 32/16 */
+}
+
+
+
+
+
+
+
+
+
+/* Main menu
+ * Duplicate here, because use of :not
+ * local/layout.css
+*/
+
+/* Line between items */
+#menu li:before {
+	background: whitesmoke;
+}
+
+#menu li:first-child:before {
+	background: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* Meta menu
+ * local/layout.css
+*/
+
+#meta {
+	margin-right: -10px;
+}
+
+
+
+
+
+
+
+
+
+/* Footer bottom links
+ * Duplicate here, because use of :not
+ * local/layout.css
+*/
+
+#footerlinks li {
+	border-left: 1px solid lightslategrey;
+}
+
+#footerlinks li:first-child {
+	border-left: 0;
+}
+
+
+
+
+
+
+
+
+
+/* C1 Subnavigation in sidebar
+ * Duplicate here, because use of :not
+ * local/components.css
+*/
+
+#subnav .level-1 > li.subnav,
+#subnav .level-2 {
+	border-color: gainsboro !important;
+}
+
+
+
+
+
+
+
+
+
+/* Carousel caption background
+ * local/components.css
+*/
+
+.carousel .carousel-inner > .item > .carousel-caption {
+	background: white;
+}
+
+
+
+
+
+
+
+
+
+/* Video play button
+ * local/components.css
+ * http://stackoverflow.com/questions/13867226/pseudo-element-on-parent-hidden-behind-child-image-on-ie8
+*/
+.video .video-poster {
+	display: block;
+}
+
+.video .video-poster:after {
+	content: url("../../images/videoplay-ie8.png");
+	background-image: none;
+}
+
+.video .video-poster:hover:after {
+	content: url("../../images/videoplay-ie8-hover.png");
+}
+
+
+
+
+
+
+
+

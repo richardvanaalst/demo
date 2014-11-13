@@ -1,0 +1,209 @@
+/**
+ *   C19 Google site search
+ *
+ *   Google Custom Search Engine control panel setup
+ *   Layout:       Full width
+ *   Theme:        Minimalist
+ *   Customize:    Disable Google Branding
+*/
+
+
+
+/**
+ *  Google CSE wrappers
+ *  #___gcse_0    Searchfield in header
+ *  #___gcse_1    Searchfield on search page
+ *  #___gcse_2    Search results
+ *
+ *  Set same as body font
+*/
+
+#___gcse_0 *,
+#___gcse_1 *,
+#___gcse_2 * {
+	font-family: "myriad-pro", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Search form
+
+form.gsc-search-box
+	table.gsc-search-box
+		td.gsc-input
+			input.gsc-input
+		td.gsc-search-button
+			input[button].gsc-search-button
+		td.gsc-clear-button
+			div.gsc-clear-button
+*/
+
+#search input.gsc-input,
+#main input.gsc-input {
+	border-color: gainsboro;
+	border-radius: 5px 0 0 5px;
+}
+
+#search input.gsc-input:focus,
+#main input.gsc-input:focus {
+	border-color: #009;
+}
+
+
+
+/* Replace text with icon */
+#search input.gsc-search-button,
+#main input.gsc-search-button {
+	width: 30px;
+	text-indent: 40px; /* width 30 + extra 10 breathing room */
+	background-color: #009;
+	background-image: url("../../images/sprite.png");
+	background-position: -160px 0;
+	border-radius: 0 5px 5px 0;
+}
+
+#search input.gsc-search-button:hover,
+#search input.gsc-search-button:focus,
+#main input.gsc-search-button:hover,
+#main input.gsc-search-button:focus {
+	background-color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Search results
+*/
+
+/*  Wrappers  */
+#main .gsc-result {
+	border-color: gainsboro;
+}
+
+
+
+/*  Search query hit  */
+/*#main .gs-result b {}*/
+
+
+
+/*  Title  */
+#main .gsc-result .gs-title,
+#main .gs-result .gs-title b {
+	color: #f60;
+}
+
+#main .gs-result a.gs-title:hover,
+#main .gs-result a.gs-title:focus,
+#main .gs-result a.gs-title:hover b,
+#main .gs-result a.gs-title:focus b {
+	color: #009;
+}
+
+
+
+
+
+
+
+
+
+/*  No results  */
+
+/*#main .gs-no-results-result .gs-snippet {}*/
+
+
+
+
+
+
+
+
+
+/*  Misspelled and suggestion  */
+
+/*#main .gs-spelling {}*/
+
+
+
+
+
+
+
+
+
+/*  Result content  */
+#main .gs-result .gs-snippet {
+	color: black;
+}
+
+
+
+/*  Url  */
+#main .gs-result .gs-visibleUrl {
+	color: lightslategrey;
+}
+
+
+
+
+
+
+
+
+
+/*  Pager  */
+
+#main .gsc-results .gsc-cursor-box .gsc-cursor-page {
+	color: #009;
+}
+
+#main .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+	color: #009;
+}
+
+#main .gsc-results .gsc-cursor-box .gsc-cursor-page:hover,
+#main .gsc-results .gsc-cursor-box .gsc-cursor-page:focus {
+	color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/*  Hi DPI  */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+	#header input.gsc-search-button,
+	#main input.gsc-search-button,
+	.sprite {
+		background-image: url("../../images/sprite@2x.png");
+		background-size: 192px auto;
+	}
+
+}
+
+
+
+
+
+
+
+

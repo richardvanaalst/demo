@@ -1,0 +1,819 @@
+/**
+ *   Styling for all components (Cxx)
+*/
+
+
+
+/**
+ *  C1 Subnavigation in sidebar
+ *     div#subnavigation
+ *     nav#subnav
+ *     nav.subnav
+ *  C2 Subnavigation in content
+ *     nav#subhomenav
+ *     nav.subnav
+*/
+
+
+
+/**
+ *  C1 & C2: Subnav items with subnav children, level 1+
+ *  Level 1+
+ *  Arrow on the left:
+*/
+
+nav.subnav .level-2 a:before {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin-right: 10px;
+	margin-bottom: 1px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: 0 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C1 Subnavigation in sidebar
+ *  There's no sidebar on screens smaller than 768px
+*/
+
+@media only screen and (min-width: 768px) {
+
+	/**
+	 * General
+	*/
+
+	/* Level 1 + 2 */
+	#subnav .level-1:not(.subnav),
+	#subnav .level-1 > li.subnav,
+	#subnav .level-2 {
+		border-color: #e7e7e7;
+	}
+
+	/* Level 1 */
+	#subnav .level-1:not(.subnav),
+	#subnav .level-1 > li.subnav {
+		border-radius: 5px;
+	}
+
+
+
+
+
+
+
+
+
+	/**
+	 * Items without subnav children
+	*/
+
+	#subnav .level-1:not(.subnav) a:before {
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		margin-right: 10px;
+		margin-bottom: 1px;
+		content: "";
+		background-image: url("../../images/sprite.png");
+		background-position: 0 0;
+	}
+
+
+
+
+
+
+
+
+
+	/**
+	 * Items with subnav children
+	 * ul.subnav, li.subnav
+	*/
+
+	/* Level 1 */
+	#subnav .level-1 > li.subnav > a {
+		color: #30292e;
+	}
+
+	#subnav .level-1 > li.subnav > a:hover,
+	#subnav .level-1 > li.subnav > a:focus {
+		color: #f60;
+	}
+
+
+
+
+
+
+
+
+
+	/**
+	 * Active state
+	*/
+
+	#subnav .level-1 .active > a {
+		color: #f60;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C3 Paginatitel
+ *  C4 Introduction text
+*/
+
+/*.main-content header h1 {}*/
+
+/*.main-content header p {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C5 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C6 Collapsible panels
+ *  C16 Veelgestelde vragen
+ *
+ *  Based on Bootstrap Collapse
+ *  http://getbootstrap.com/components/#panels
+ *  http://getbootstrap.com/javascript/#collapse
+*/
+
+.panel-group .panel,
+.panel-group .panel-heading + .panel-collapse .panel-body {
+	border-color: #e7e7e7;
+}
+
+.panel-group .panel {
+	border-radius: 5px;
+}
+
+
+
+/* Duplicate from p a */
+.panel-body li a {
+	color: black;
+}
+
+.panel-body li a:hover,
+.panel-body li a:focus {
+	color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C6 Paragraaf wrapper
+*/
+
+.panels .panel-heading {
+	background-color: #e7e7e7;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C7 Homepage carousel
+*/
+
+/*  Indicators  */
+.carousel-indicators li {
+	border-color: #f60;
+}
+
+.carousel-indicators li:hover,
+.carousel-indicators li.active {
+	border-color: #f60;
+}
+
+.carousel-indicators li.active:before {
+	background-color: #f60;
+}
+
+
+
+/*  Image inside slide  */
+/*.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {}*/
+
+
+
+/*  Text inside slide  */
+.carousel-caption p {
+	color: #30292e;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C8 Mijn pensioen
+*/
+
+#my-pension {
+	background-color: #f7f7f7;
+}
+
+#my-pension h1 {
+	color: #f60;
+}
+
+#my-pension ul {
+	list-style: none;
+	color: #f60;
+}
+
+#my-pension ul li:before {
+	display: inline-block;
+	width: 13px;
+	height: 10px;
+	margin-left: -18px;
+	margin-right: 5px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: -128px 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C9 Alert bar
+*/
+
+#alert-bar > * {
+	color: #fff;
+	background-color: #f60;
+}
+
+#alert-bar .action:before {
+	background-position: 0 -16px;
+}
+
+#alert-bar a:hover .action,
+#alert-bar a:focus .action {
+	text-decoration: underline;
+}
+
+
+
+/*  Better link feedback on tablet & mobile  */
+@media only screen and (max-width: 768px) {
+
+	#alert-bar a:hover,
+	#alert-bar a:focus {
+		background-color: #009;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C10 Link list
+*/
+
+/*.list {}*/
+
+
+
+/* Bootstrap dropdown */
+.dropdown button {
+	border-color: #999;
+	border-radius: 5px;
+}
+
+.dropdown button:hover,
+.dropdown button:focus {
+	color: #009;
+	border-color: #009;
+}
+
+
+
+.dropdown-menu {
+	border-radius: 0;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	background-color: #f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C11 Banner
+*/
+
+/*.banner {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C12 Video
+*/
+
+.video .video-poster {
+	position: relative;
+}
+
+.video .video-poster:after {
+	display: block;
+	width: 96px;
+	height: 96px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -48px;
+	margin-left: -48px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: 0 -128px;
+}
+
+.video .video-poster:hover:after {
+	background-position: -96px -128px;
+}
+
+
+
+
+
+
+
+
+
+
+/**
+ *  C13 News
+ *  C13a News small
+ *  C13b News wide
+*/
+
+.news h2 {
+	color: #30292e;
+}
+
+.news time {
+	color: #777;
+}
+
+.news a:hover h2,
+.news a:focus h2,
+.news a:hover time,
+.news a:focus time {
+	color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C14 Home poll
+ *  -Not used-
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C15 Top visual
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C16 Veelgestelde vragen
+ *  See also C6
+*/
+
+.faqs .panel.in {
+	background-color: #f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C17 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C18 Download lijst
+*/
+
+.download-list li {
+	border-bottom-style: dotted;
+	border-color: #cfd7df;
+}
+
+.download-list li a:hover,
+.download-list li a:focus {
+	background-color: #f7f7f7;
+}
+
+
+
+/* Arrow in front */
+.download-list li a:before {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-right: 11px;
+	margin-bottom: 1px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+	background-position: 0 0;
+}
+
+
+
+/*  File type icon  */
+.download-list li a:after {
+	width: 22px;
+	height: 18px;
+	position: absolute;
+	top: 12px;
+	right: 0;
+	content: "";
+	background-image: url("../../images/sprite.png");
+}
+
+.download-list a.downloadPDF:after        { background-position:    0   -32px; }
+.download-list a.downloadWord:after       { background-position:  -32px -32px; }
+.download-list a.downloadExcel:after      { background-position:  -64px -32px; }
+.download-list a.downloadPowerPoint:after { background-position:  -96px -32px; }
+.download-list a.downloadZip:after        { background-position: -128px -32px; }
+
+
+
+/*  File size  */
+.download-list .size {
+	color: #777;
+}
+
+
+
+/*  Toggle list more/less items  */
+.download-list .toggle-list a {
+	color: #30292e;
+}
+
+.download-list .toggle-list a:hover,
+.download-list .toggle-list a:focus {
+	color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C19 Google site search
+ *  See local/search.css
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C20 Nieuws trigger
+*/
+
+.news-trigger {
+	border-bottom-style: dotted;
+	border-color: #cfd7df;
+}
+
+.news-trigger h3 a {
+	color: #f60;
+}
+
+.news-trigger h3 a:hover,
+.news-trigger h3 a:focus {
+	color: #009;
+}
+
+.news-trigger time {
+	color: #777;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C21 Nieuws detail
+*/
+
+.news-detail {
+	border-bottom-style: dotted;
+	border-color: #cfd7df;
+}
+
+.news-detail time {
+	color: #777;
+}
+
+.news-detail p {
+	font-size: 1.125em;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C22 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C23 Paging
+*/
+
+/* Arrow in front/behind pager */
+.pager .previous:before,
+.pager .next:after {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin-bottom: 1px;
+	content: "";
+	background-image: url("../../images/sprite.png");
+}
+
+
+
+.pager .previous:before {
+	margin-right: 10px;
+	background-position: -8px 0;
+}
+
+.pager .previous:hover:before,
+.pager .previous:focus:before {
+	background-position: -8px -8px;
+}
+
+
+
+.pager .next:after {
+	margin-left: 10px;
+	background-position: 0 0;
+}
+
+.pager .next:hover:after,
+.pager .next:focus:after {
+	background-position: 0 -8px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C24 Dashboard
+*/
+
+/*.content-trigger {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C25 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C26 Video lightbox
+ *
+ *  Based on Bootstrap Modal
+ *  http://getbootstrap.com/javascript/#modals
+*/
+
+/*.modal {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C27 Mobile navigation
+*/
+
+#mobileNav {
+	border-color: #e7e7e7;
+}
+
+#mobileNav li:not(:first-child) {
+	padding-top: 1px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAE0lEQVQIW2NkYJj5n4EhnZEBCAARegIC2cmHrAAAAABJRU5ErkJggg==) repeat-x;
+	border: 0;
+}
+
+#mobileNav a:hover,
+#mobileNav a:focus {
+	background-color: #f7f7f7;
+}
+
+
+
+/* User icon */
+#mobileNav ul li.user a:before {
+	background-position: -48px 0;
+}
+
+#mobileNav ul li.user a:hover:before,
+#mobileNav ul li.user a:focus:before {
+	background-position: -144px -16px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Hi DPI
+*/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+
+	nav.subnav .level-2 a:before,
+	#subnav .level-1:not(.subnav) a:before,
+	#my-pension ul li:before,
+	.video .video-poster:after,
+	.download-list li a:before,
+	.download-list .size:after,
+	.pager .previous:before,
+	.pager .next:after,
+	.sprite {
+		background-image: url("../../images/sprite@2x.png");
+		background-size: 192px auto;
+	}
+
+}
+
+
+
+
+
+
+
+

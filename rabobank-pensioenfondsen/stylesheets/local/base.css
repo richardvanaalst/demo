@@ -1,0 +1,224 @@
+/**
+ *   Base styling
+ *   body, headings, paragraphs, images etc.
+*/
+
+
+
+/**
+ *  Fonts
+ *  Myriad Pro
+ *    Light  300
+ *    Normal 400
+ *    Bold   700
+*/
+
+@import url("fonts.css");
+
+
+
+
+
+
+
+
+
+/**
+ *  Base elements
+*/
+
+html {
+	background-color: #eaeef4;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	html {
+		border-top: 3px solid #009;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	html {
+		/* Chrome 10-25, Safari 5.1-6.0, iOS 5.0-6.1, Android 4.0-4.3, Blackberry 10 */
+		background-image: -webkit-linear-gradient(top, white, white 100px, #eaeef4 172px);
+		background-image:   linear-gradient(to bottom, white, white 100px, #eaeef4 172px);
+		background-repeat: repeat-x;
+		background-size: auto 172px;
+	}
+
+	/* IE9- */
+	html.no-cssgradients {
+		background-image: url("../../images/background.png");
+	}
+
+}
+
+
+
+body {
+	font-family: "myriad-pro", sans-serif;
+	color: #30292e;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Headers
+*/
+
+h1, .h1 {
+	color: #009;
+}
+
+h2, .h2 {
+	color: #009;
+}
+
+h3, .h3 {
+	color: #f60;
+}
+
+h4, .h4 {
+	color: #30292e;
+}
+
+h5, .h5 {
+	color: #30292e;
+}
+
+h6, .h6 {
+	color: #f60;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Paragraphs and links
+*/
+
+/*p {}*/
+
+
+
+a {
+	color: #009;
+}
+
+/*a:visited {
+	color: lightslategrey;
+}*/
+
+a:hover, a:focus {
+	color: #f60;
+}
+
+a:link {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+p a {
+	color: #30292e;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Images
+*/
+
+img {
+	border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Tables
+*/
+
+.table {
+	border-color: #e7e7e7;
+	border-radius: 0;
+}
+
+.table thead {
+	background-color: #eef0f3;
+}
+
+.table tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+.table tbody tr:nth-child(even) {
+	background-color: #f7f7f7;
+}
+
+.table thead th,
+.table tbody td {
+	border-color: #e7e7e7;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Misc
+*/
+
+::-moz-selection {
+	color: black;
+	text-shadow: none;
+	background: #e7e7e7;
+}
+
+::selection {
+	color: black;
+	text-shadow: none;
+	background: #e7e7e7;
+}
+
+
+
+
+
+
+
+

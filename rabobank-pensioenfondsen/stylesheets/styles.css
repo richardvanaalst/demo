@@ -1,0 +1,28 @@
+/* o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o
+ o
+  o   Syntrus | Achmea pensioenfondsen stylesheets
+  o   White-label styles
+  o   Copyright ©2013-2014 PUURPXL
+  o
+  o   This file is for reference only,
+  o   it is not intended to be used for production.
+  o   Compile the files below into a single file,
+  o   in this specific order.
+  o
+  o   Do not edit these files directly!
+  o   To modify the theme, edit the files located in '/local'
+  o   to add or overwrite specific styling.
+ o
+o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o o */
+
+
+
+@import url("bootstrap.css");    /*  Bootstrap framework, including the grid and print styles  */
+@import url("base.css");         /*  Base styling for headings, paragraphs, images etc  */
+@import url("forms.css");        /*  Styling for forms and form elements  */
+@import url("common.css");       /*  Helper classes, common custom elements  */
+@import url("layout.css");       /*  Basic page layout: Header, main, footer, navigation  */
+@import url("components.css");   /*  Styling for all components (Cxx)  */
+@import url("search.css");       /*  Styling for search field and results page (C19)  */
+
+

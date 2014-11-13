@@ -1,0 +1,403 @@
+/**
+ *   Styling for forms and form elements
+*/
+
+
+
+/**
+ *  Global styling
+*/
+
+/*form {}*/
+
+
+
+fieldset {
+	padding: 0;
+	margin: 0 0 2em;
+	border: 0;
+}
+
+
+
+legend {
+	font-size: 1.75em;
+	font-weight: 300;
+}
+
+
+
+/* Warning: Keep in mind that labels are used as text next to checkboxes/radio buttons */
+label {
+	cursor: pointer;
+}
+
+
+
+input,
+select,
+textarea {
+	line-height: normal;
+	border: 1px solid;
+	outline: 0 auto -webkit-focus-ring-color;
+}
+
+/*input:focus,
+select:focus,
+textarea:focus {}*/
+
+
+
+/*textarea {}*/
+
+
+
+/*select {}*/
+
+/*option {}*/
+
+
+
+input[type="checkbox"],
+input[type="radio"] {
+	border: 0;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+
+
+input[type="file"] {
+	line-height: 1;
+	border: 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Remove UA default styling
+*/
+
+/*  Remove default styling  */
+select {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+
+	/* Hide select arrow in Firefox
+	 * https://bugzilla.mozilla.org/show_bug.cgi?id=649849 */
+	text-indent: 0.01px;
+	text-overflow: "";
+
+	/* Remove default border-radius in Webkit */
+	border-radius: 0;
+}
+
+
+
+/*  Remove background-color in IE11  */
+input[type="file"] {
+	background-color: transparent;
+}
+
+
+
+/*  Remove button look-and-feel  */
+input[type="submit"],
+input[type="button"],
+button {
+	border: 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Global styling for Tridion's generated forms
+*/
+
+fieldset ol {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+fieldset li {
+	width: 100%;
+	position: relative;
+	float: left;
+	margin-bottom: 1em;
+}
+
+fieldset li > * {
+	float: left;
+	clear: left;
+	margin-bottom: 6px;
+}
+
+fieldset li > label {
+	font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+/* Align form elements in 4 rows, 1 column
+ * label
+ * input
+ * help
+ * error
+*/
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+fieldset input[type="file"],
+fieldset select,
+fieldset textarea,
+fieldset span.radioButtonList {
+	width: 100%;
+}
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+fieldset select,
+fieldset textarea {
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+fieldset input[type="text"],
+fieldset input[type="password"],
+fieldset input[type="file"],
+fieldset select {
+	height: 35px;
+}
+
+fieldset input[type="file"] {
+	margin-top: 6px;
+	margin-bottom: 0;
+}
+
+fieldset select {
+	padding-top: 4px;    /* Vertically align select text in Firefox... */
+	padding-bottom: 5px; /* and put it back in place in Webkit */
+}
+
+fieldset textarea {
+	min-height: 8em;
+	padding-bottom: 14px; /* Vertically align resizer in Firefox */
+}
+
+
+
+/*fieldset span.help {}*/
+
+fieldset li > em {
+	width: 100%;
+	position: relative;
+	margin-bottom: 0;
+	font-style: normal;
+}
+
+/* Overlap previous span, which has visibility set */
+fieldset li > em span + span {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Specific styling for Tridion's generated forms
+*/
+
+/*  Required asterisk (*)  */
+.container-form abbr[title] {
+	position: absolute;
+	margin-left: 4px;
+	border-bottom: 0;
+}
+
+.container-form abbr[title]:after {
+	content: "*";
+}
+
+.container-form abbr[title] img {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+/* Align form elements in 3 rows, 2 columns
+ * label
+ * input - error
+ * help
+*/
+
+/* Galaxy note width = 400px, max width of all mobile devices.
+ * So min-width: 401px to give it the mobile view. */
+@media only screen and (min-width: 401px) {
+
+	fieldset input[type="text"],
+	fieldset input[type="password"],
+	fieldset input[type="file"],
+	fieldset select,
+	fieldset span.radioButtonList {
+		max-width: 276px; /* 320px-2*22px */
+	}
+
+	fieldset textarea {
+		max-width: 460px;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 650px) {
+
+	.container-form li > em {
+		width: 50%;
+		position: absolute;
+		top: 35px;
+		left: 300px;
+		margin-left: -10px;
+	}
+
+	.container-form span.radioButtonList ~ em {
+		top: 0;
+		margin-top: 0;
+	}
+
+	.container-form textarea ~ em {
+		position: static;
+		margin-left: 0;
+	}
+
+}
+
+
+
+/* Align form elements in 2 rows, 3 columns
+ * label - input - error
+ *         help
+*/
+
+@media only screen and (min-width: 1140px) {
+
+	fieldset li {
+		margin-top: 1em;
+	}
+
+	.container-form li > label,
+	.container-form input[type="text"],
+	.container-form input[type="file"],
+	.container-form select,
+	.container-form textarea,
+	.container-form span.radioButtonList {
+		clear: none;
+	}
+
+	.container-form li > label {
+		width: 200px;
+		line-height: 35px;
+	}
+
+	.container-form abbr[title] {
+		margin-left: 6px;
+	}
+
+	.container-form span.help,
+	.container-form li > em {
+		margin-left: 200px;
+	}
+
+	.container-form li > em,
+	.container-form span.radioButtonList ~ em {
+		top: 4px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Specific styling for Tridion's generated login
+*/
+
+.container-app .messagebox {
+	padding-left: 22px;
+	padding-right: 22px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  Submit button
+ *  forms: .controls
+ *  login: .buttonbar
+*/
+
+.controls input[type="submit"],
+.buttonbar input[type="submit"] {
+	height: 35px;
+	padding: 0 20px;
+	line-height: 35px;
+}
+
+.buttonbar input[type="submit"] {
+	margin-top: 0.5em;
+}
+
+
+
+
+
+
+
+

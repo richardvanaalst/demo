@@ -1,0 +1,1362 @@
+/**
+ *   Styling for all components (Cxx)
+*/
+
+
+
+/**
+ *  C1 Subnavigation in sidebar
+ *     div#subnavigation
+ *     nav#subnav
+ *     nav.subnav
+ *  C2 Subnavigation in content
+ *     nav#subhomenav
+ *     nav.subnav
+*/
+
+
+
+/*  Level 1+
+ *  Make text indent when spanning multiple lines
+*/
+
+nav.subnav .level-2 a {
+	display: inline-block;
+	padding-left: 18px;
+	text-indent: -18px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C1 Subnavigation in sidebar
+ *  There's no sidebar on screens smaller than 768px
+*/
+
+@media only screen and (min-width: 768px) {
+
+	/**
+	 * General
+	*/
+
+	#subnav ul ul {
+		padding-left: 20px;
+	}
+
+
+
+
+
+
+
+
+
+	/**
+	 * Items without subnav children
+	 * Make text indent when spanning multiple lines
+	*/
+
+	#subnav .level-1:not(.subnav) {
+		padding: 13px 20px 17px;
+		border: 1px solid;
+	}
+
+	#subnav .level-1:not(.subnav) a {
+		display: inline-block;
+		padding-left: 18px;
+		text-indent: -18px;
+	}
+
+
+
+
+
+
+
+
+
+	/**
+	 * Items with subnav children
+	 * ul.subnav, li.subnav
+	*/
+
+	/*  Level 1  */
+
+	#subnav .level-1 > li.subnav {
+		margin-bottom: 10px;
+		border: 1px solid;
+	}
+
+	#subnav .level-1 > li.subnav > a {
+		display: block;
+		padding: 0 20px;
+		position: relative;
+		line-height: 36px;
+	}
+
+	/* Collapse icon +/- */
+	#subnav .level-1 > li.subnav > a:after {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 20px;
+		content: "−"; /* minus −, not dash - */
+		font-weight: 700;
+		line-height: 36px;
+		color: inherit;
+	}
+
+	#subnav .level-1 > li.subnav.collapsed > a:after {
+		content: "+";
+	}
+
+
+
+	/*  Level 2  */
+	#subnav .level-2 {
+		border-top: 1px solid;
+	}
+
+	/* Add padding here instead of on .level-2:
+	 * Bootstrap collapse ignores spacing of collapsing element.
+	*/
+	#subnav .level-2 > li:first-child {
+		padding-top: 10px;
+	}
+
+	#subnav .level-2 > li:last-child {
+		padding-bottom: 10px;
+	}
+
+
+
+
+
+
+
+
+
+	/**
+	 * Active state
+	*/
+
+	#subnav .level-1 .active > a {
+		font-weight: 700;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C3 Page title
+ *  C4 Introduction text
+*/
+
+.main-content header h1 {
+	margin-bottom: 0.66666666666667em; /* 24/36 */
+}
+
+.main-content header p {
+	margin-bottom: 1.5em;
+	font-size: 1.125em;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C5 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C6 Collapsible panels
+ *  C16 FAQs
+ *
+ *  Based on Bootstrap Collapse
+ *  http://getbootstrap.com/components/#panels
+ *  http://getbootstrap.com/javascript/#collapse
+*/
+
+/* Clear Bootstrap defaults
+ * -> also footer panels
+*/
+.panel {
+	margin-bottom: 0;
+	background-color: transparent;
+	border: 0;
+	box-shadow: none;
+}
+
+
+
+/**
+ *  Panels general
+*/
+
+.panel-group .panel {
+	border: 1px solid;
+}
+
+.panel-group .panel + .panel {
+	margin-top: 10px;
+}
+
+
+
+.panel-group .panel-heading {
+	padding: 0;
+	position: relative;
+	border-radius: 0;
+}
+
+.panel-title {
+	font-size: 1em;
+}
+
+.panel-title > a {
+	display: block;
+	padding: 14px 20px;
+}
+
+/* Collapse icon +/- */
+.panel-title > a:after {
+	position: absolute;
+	top: 0;
+	content: "+";
+	font-size: 1.25em; /* 20/16 */
+	font-weight: 400;
+	line-height: 2.2; /* 44/20 */
+}
+
+.in .panel-title > a:after {
+	content: "−"; /* minus −, not dash - */
+}
+
+
+
+.panel-body {
+	padding: 14px 20px;
+}
+
+.panel-body > * {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.panel-body * + h4 {
+	margin-top: 1.5em;
+}
+
+.panel-body ul,
+.panel-body ol {
+	padding-left: 18px;
+}
+
+.panel-body li a {
+	text-decoration: underline;
+}
+
+.panel-body a.button {
+	margin-top: 0.5em;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C6 Paragraaf wrapper
+*/
+
+.panels .panel-title {
+	font-weight: 700;
+}
+
+.panels .panel-title > a {
+	padding-right: 50px;
+}
+
+.panels .panel-title > a:after {
+	right: 20px;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C7 Homepage carousel narrow/wide
+*/
+
+#carousel {
+	padding: 0;
+}
+
+
+
+/*  Indicators  */
+.carousel-indicators {
+	width: auto;
+	left: auto;
+	right: 22px;  /* 11+11 */
+	bottom: 16px; /* 11+5 */
+	margin: 0;
+	line-height: 1;
+}
+
+.no-js .carousel-indicators {
+	display: none;
+}
+
+
+
+@media only screen and (min-width: 650px) {
+
+	.carousel-indicators {
+		right: 44px;  /* 22+22 */
+		bottom: 33px; /* 22+11 */
+	}
+
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	.carousel-indicators {
+		right: 74px;  /* 44+30 */
+		bottom: 70px; /* 44+33-(15/2) */
+	}
+
+}
+
+
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+	width: 12px;
+	height: 12px;
+	position: relative;
+	margin: 0 0 0 3px;
+	background-color: white;
+	border: 1px solid;
+	border-radius: 50%;
+}
+
+.carousel-indicators li.active:before {
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	content: "";
+	border-radius: 50%;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	.carousel-indicators li,
+	.carousel-indicators li.active {
+		width: 15px;
+		height: 15px;
+	}
+
+	.carousel-indicators li.active:before {
+		width: 7px;
+		height: 7px;
+		top: 3px;
+		left: 3px;
+	}
+
+}
+
+
+
+/*  Actual slides  */
+.carousel-inner > .item {
+	display: block;
+	width: 100%;
+	max-height: 360px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	overflow: hidden;
+	opacity: 0;
+	-webkit-transition: opacity ease-in-out 0.6s;
+	        transition: opacity ease-in-out 0.6s;
+}
+
+.carousel-inner > .item:first-child {
+	position: relative;
+}
+
+.carousel-inner > .item.active {
+	z-index: 2;
+	opacity: 1;
+}
+
+
+
+/*  Image inside slide  */
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+	width: 100%;
+	border-radius: 0;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img {
+		width: auto;
+		max-width: none;
+		height: 100%;
+	}
+
+}
+
+
+
+/*  Text inside slide  */
+.carousel-caption {
+	padding: 13px 11px 26px 11px;
+	bottom: 11px;
+	left: 11px;
+	right: 11px;
+	text-align: left;
+	text-shadow: none;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+
+
+@media only screen and (min-width: 650px) {
+
+	.carousel-caption {
+		padding: 24px 22px 36px 22px;
+		bottom: 22px;
+		left: 22px;
+		right: 22px;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	.carousel-caption {
+		padding: 26px 141px 26px 32px;
+		bottom: 44px;
+		left: 44px;
+		right: 44px;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+
+}
+
+
+
+.carousel-caption a {
+	display: block;
+}
+
+.carousel-caption p {
+	margin: 0;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+
+	.carousel-caption h1 {
+		margin-bottom: 0.33333333333333em;
+		font-size: 1.5em; /* 24/16 */
+	}
+
+	.carousel-caption p {
+		font-size: 0.875em;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+/**
+ *  C8 "Mijn pensioen"
+*/
+
+#my-pension {
+	padding: 20px 22px;
+}
+
+#my-pension ul {
+	padding-left: 18px;
+	margin-bottom: 21px;
+}
+
+#my-pension ul li {
+	margin-bottom: 5px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	#my-pension {
+		max-height: 360px;
+		padding: 40px 44px;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	#my-pension {
+		height: 360px;
+		padding: 40px 44px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C9 Alert bar
+*/
+
+#alert-bar > * {
+	display: block;
+	padding: 8px 15px;
+	margin: 0;
+	font-size: 1.125em; /* 18/16 */
+	font-weight: 300;
+	line-height: 1.33333333333333; /* 24/18 */
+}
+
+/* Only show on link elements */
+#alert-bar .action {
+	display: none;
+	margin-top: 5px;
+	font-size: 0.77777777777778em; /* 14/18 */
+	font-weight: normal;
+}
+
+#alert-bar a .action {
+	display: block;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	#alert-bar > * {
+		position: relative;
+		padding: 22px 40px;
+		font-size: 1.75em; /* 28/16 */
+	}
+
+	#alert-bar a {
+		padding-right: 165px;
+	}
+
+	#alert-bar .action {
+		padding: 22px 0;
+		position: absolute;
+		right: 40px;
+		bottom: 0;
+		font-size: 0.57142857142857em; /* 16/28 */
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C10 Home link list
+ *  C11 Home banner
+ *  C12 Home video
+ *  C13 News
+*/
+
+.list header,
+.banner header,
+.video header,
+.news header,
+.list p,
+.banner p,
+.video p,
+.news p {
+	margin-bottom: 1em;
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.list header,
+	.banner header,
+	.video header,
+	.news header {
+		margin-bottom: 0;
+	}
+
+	.list .content,
+	.banner .content,
+	.video .content,
+	.news .content {
+		margin-top: 44px;
+	}
+
+}
+
+
+
+/* Vertically align header and paragraph *le sigh* */
+@media only screen and (min-width: 992px) {
+
+	.subhome-page .list h1,
+	.subhome-page .banner h1,
+	.subhome-page .video h1,
+	.action-page .list h1,
+	.action-page .banner h1,
+	.action-page .video h1 {
+		min-height: 2.28571428571428em; /* 2x line-height */
+		line-height: 1.14285714285714;  /* 32/28 */
+	}
+
+	.list p,
+	.banner p,
+	.video p {
+		min-height: 4.875em; /* 3x line-height 26/16 */
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C10 Link list
+*/
+
+/*.list {}*/
+
+
+
+/* Bootstrap dropdown */
+.dropdown button {
+	display: block;
+	width: 100%;
+	max-width: 280px;
+	height: 35px;
+	padding: 0 14px;
+	position: relative;
+	text-align: left;
+	background-color: white;
+}
+
+.dropdown button:active {
+	box-shadow: none;
+}
+
+.dropdown button .caret {
+	display: block;
+	position: absolute;
+	top: 15px;
+	right: 16px;
+	color: inherit;
+}
+
+
+
+.dropdown .dropdown-menu {
+	width: 100%;
+	max-width: 280px;
+	padding-left: 0;
+}
+
+.dropdown-menu > li > a {
+	padding: 6px 18px;
+}
+
+.dropdown-menu > .active > a {
+	background-color: transparent;
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	color: inherit;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C11 Banner
+*/
+
+/*.banner {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C12 Video
+*/
+
+/*.video {}*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C13 News
+*/
+
+.news ul {
+	padding: 0;
+	list-style: none;
+}
+
+.news li {
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+.news a {
+	float: left;
+}
+
+.news h2 {
+	margin: 0;
+	font-weight: 400;
+	line-height: 1.625;
+}
+
+
+
+/*  C13b News wide  */
+
+@media only screen and (min-width: 768px) {
+
+	.news.wide li {
+		margin-bottom: 0.5em;
+	}
+
+	.news.wide a {
+		float: none;
+	}
+
+	.news.wide h2 {
+		display: inline-block;
+	}
+
+	.news.wide time {
+		min-width: 145px;
+		float: left;
+		margin-right: 15px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C14 Home poll
+ *  -Not used-
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C15 Top visual
+*/
+
+.top-visual {
+	max-height: 185px; /* 650x185 ~ 1052x300 */
+	padding: 0;
+	overflow: hidden;
+}
+
+.home-page .top-visual {
+	max-height: 308px; /* 650x308 ~ 760x360 */
+}
+
+
+
+@media only screen and (min-width: 650px) {
+
+	.top-visual {
+		max-height: 344px; /* 300 + 44 padding-top */
+	}
+
+	.home-page .top-visual {
+		max-height: 360px; /* 760x360 */
+	}
+
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	.top-visual {
+		padding: 44px 44px 0;
+	}
+
+	.home-page .top-visual {
+		padding: 0;
+	}
+
+}
+
+
+
+/* Homepage visual small */
+.home-page .top-visual.col-md-8 img {
+	width: 100%;
+}
+
+
+
+@media only screen and (min-width: 992px) {
+
+	.home-page .top-visual.col-md-8 img {
+		width: auto;
+		max-width: none;
+		height: 100%;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C16 FAQs
+ *  See also C6
+*/
+
+.faqs .panel-title {
+	font-weight: 400;
+}
+
+.faqs .panel-title > a {
+	padding-left: 50px;
+}
+
+.faqs .panel-title > a:after {
+	left: 20px;
+}
+
+.faqs .panel-body {
+	padding-left: 50px;
+}
+
+.faqs .panel-body p:last-child {
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C17 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C18 Download list
+*/
+
+.download-list ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+.download-list li {
+	margin-bottom: 0; /* override .content li 5px */
+	border-bottom: 1px solid;
+}
+
+.download-list li a {
+	display: block;
+	padding: 6px 100px 5px 18px;
+	position: relative;
+	text-indent: -18px;
+}
+
+.download-list .size {
+	position: absolute;
+	top: 9px;
+	right: 32px;
+	font-size: 0.875em; /* 14/16 */
+}
+
+
+
+/*  More/less items  */
+
+.download-list .toggle-list {
+	margin-top: -1em;
+}
+
+.download-list .toggle-list a {
+	display: block;
+	padding: 6px 0 5px;
+}
+
+/* +/- Collapse icon */
+.download-list .toggle-list a:before {
+	display: inline-block;
+	margin-right: 10px;
+	content: "";
+	font-weight: 300;
+}
+
+.download-list .toggle-list a.more-items:before {
+	content: "+";
+}
+
+.download-list .toggle-list a.less-items:before {
+	content: "−"; /* minus −, not dash - */
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C19 Google site search
+ *  See local/search.css
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C20 News trigger
+*/
+
+.news-trigger {
+	padding-bottom: 22px;
+	margin-bottom: 22px;
+	border-bottom: 1px solid;
+}
+
+.news-trigger h3 {
+	margin-bottom: 0.25em;
+}
+
+.news-trigger p {
+	margin: 0;
+	font-size: 1.125em;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+
+	.news-trigger {
+		padding-bottom: 33px;
+		margin-bottom: 33px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C21 News detail
+*/
+
+.news-detail {
+	padding-bottom: 0.875em;
+	margin-bottom: 1.875em;
+	border-bottom: 1px solid;
+}
+
+.news-detail time {
+	display: block;
+}
+
+.news-detail img {
+	float: none;
+	margin-top: 1em;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C22 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C23 Paging
+*/
+
+.pager .previous {
+	float: left;
+}
+
+.pager .next {
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C24 Dashboard
+*/
+
+@media only screen and (min-width: 992px) {
+
+	/* Align links at the bottom
+	 * line-height 3*26/16 + margin-bottom 2*5/16 = 5.5
+	*/
+	.content-trigger ul {
+		min-height: 5.5em;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C25 ???
+*/
+
+
+
+
+
+
+
+
+
+/**
+ *  C26 Video lightbox
+ *
+ *  Based on Bootstrap Modal
+ *  http://getbootstrap.com/javascript/#modals
+*/
+
+/*  Wrapper for the modal, remove animation  */
+.modal * {
+	-webkit-transform: translate(0, 0) !important;
+	    -ms-transform: translate(0, 0) !important;
+	        transform: translate(0, 0) !important;
+	-webkit-transition: none !important;
+	   -moz-transition: none !important;
+	     -o-transition: none !important;
+	        transition: none !important;
+}
+
+
+
+/*  Backdrop, dark background  */
+.modal-backdrop.in {
+	background-color: black;
+	opacity: 0.75;
+}
+
+
+
+/*  Actual modal window  */
+.modal-content {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+
+
+/*  Header with close button  */
+.modal-header {
+	padding: 0;
+	text-align: right;
+	border: 0;
+}
+
+.modal-header .close {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	margin: 0;
+	font-size: 28px;
+	line-height: 32px;
+	text-align: right;
+	color: white;
+	background: transparent;
+	border: none;
+}
+
+
+
+/*  Content of the modal  */
+.modal-body {
+	padding: 0;
+	box-shadow: none;
+}
+
+
+
+/*  Responsive video modal  */
+/*.modal.video-lightbox .modal-dialog {}*/
+
+@media (min-width: 768px) {
+
+	.modal.video-lightbox .modal-dialog {
+		width: auto;
+		margin: 30px 10px 0;
+	}
+
+}
+
+/* YouTube video: 853px x 510px */
+/* 853px width + 2*10px margin */
+@media screen and (min-width: 873px) {
+
+	.modal.video-lightbox .modal-dialog {
+		width: 853px;
+		margin: 30px auto 0;
+	}
+
+}
+
+
+
+/*  Responsive video embeds  */
+.flex-video {
+	height: 0;
+	padding-top: 35px;      /* YouTube chrome height */
+	padding-bottom: 56.25%; /* YouTube video ratio 16:9 */
+	position: relative;
+	overflow: hidden;
+}
+
+/* Ratio 4:3   (480/640) */
+.flex-video.ratio-4x3 {
+	padding-bottom: 75%;
+}
+
+/* Ratio 16:9   (480/853) */
+.flex-video.ratio-16x9 {
+	padding-bottom: 56.25%;
+}
+
+/* Ratio 853:510   (510/853) */
+.flex-video.ratio-853x510 {
+	padding-bottom: 59.78898007034%;
+}
+
+.flex-video > iframe,
+.flex-video > object,
+.flex-video > embed {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+
+
+
+
+/**
+ *  C27 Mobile navigation
+*/
+
+#mobileNav {
+	margin-top: 22px;
+	background: white;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+}
+
+#mobileNav ul {
+	padding: 0 22px;
+}
+
+#mobileNav li {
+	font-size: 1.125em; /* 18/16 */
+	text-align: center;
+}
+
+#mobileNav li:not(:first-child) {
+	border-top: 1px solid;
+}
+
+#mobileNav a {
+	display: block;
+	padding: 12px 0;
+}
+
+
+
+
+
+
+
+

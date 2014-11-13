@@ -1,0 +1,50 @@
+/******************************************************************
+Site Name: Walk in the Park
+Author: PUURPXL
+
+Stylesheet: Main Stylesheet
+
+******************************************************************/
+
+// Compass
+@import "compass";
+
+// Normalize
+@import "partials/normalize";
+
+// Sass functions
+@import "partials/functions";
+
+// Sass variables
+@import "partials/variables";
+
+// Typography
+@import "partials/typography";
+
+// Mixins
+@import "partials/mixins";
+
+// the grid
+@import "partials/grid";
+
+// Forms (inputs & labels)
+@import "modules/forms";
+
+// Buttons
+@import "modules/buttons";
+
+// Alert boxes
+// @import "modules/alerts";
+
+// Base - header, content, footer and wrappers
+@import "partials/base";
+
+// Main - specific elementens and classes
+@import "partials/main";
+
+// Animations & effects
+@import "partials/effects";
+
+// print
+@import "partials/print";
+

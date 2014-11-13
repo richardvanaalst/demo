@@ -1,0 +1,596 @@
+  // //
+ // //  Effects and animations
+// //
+
+
+/**
+ *  Sticky header
+ *  touch/mobile/tablet
+ *  no-touch/desktop
+
+> creates a jump in Chrome
+// @include media-max-medium {
+
+	#header {
+		width: 100%;
+		position: fixed;
+		z-index: 10;
+	}
+
+	#content {
+		padding-top: $header-height-m;
+
+		@include media-min-medium {
+			padding-top: $header-height-l;
+		}
+	}
+// }
+*/
+
+
+
+
+
+
+/**
+ *  Small sticky header
+ *  no-touch/desktop
+
+@include media-min-medium {
+
+	body.smallStickyHeader {
+
+		#header {
+			min-height: 0;
+			height: 50px;
+		}
+
+		#topNav {
+			display: none;
+		}
+
+		#mainNav {
+			top: 15px;
+		}
+
+		#logo {
+			$w: 66px;
+
+			width: $w;
+			height: 40px;
+			top: 5px;
+			// top: ($topnav-height + $header-height-l - $h) / 2;
+			left: 50%;
+			margin-left: -$w / 2;
+		}
+	}
+}
+*/
+
+
+
+
+
+
+/**
+ *  Collapsible navigation
+ *  mobile/tablet
+*/
+
+@include media-max-medium {
+
+	#mainNav {
+		max-height: 0;
+		position: absolute;
+		top: $header-height-s;
+		z-index: 1;
+		overflow: hidden;
+
+		// Mister La Forge, engage GPU
+		-webkit-transform: translate3d(0, 0, 0); // Chrome 35-, S/iOS 8-, A 4.4-
+		    -ms-transform: translate3d(0, 0, 0); // IE9
+		        transform: translate3d(0, 0, 0);
+		@include single-transition(max-height);
+	}
+
+
+	#touchMenuToggle {
+		$size: 40px;
+
+		display: block;
+		width: $size;
+		height: $size;
+		position: absolute;
+		top: ($header-height-s - $size) / 2;
+		right: $body-gutter-s;
+
+		a {
+			width: $size;
+			height: $size;
+			position: absolute;
+			@include hide-text;
+			@include single-transition(all);
+
+			&.open {
+				z-index: 1;
+				opacity: 1;
+				@include icons-sprite("nav-open", $size);
+			}
+
+			&.close {
+				z-index: 0;
+				opacity: 0;
+				@include icons-sprite("nav-close", $size);
+			}
+		}
+	}
+
+
+	// Show menu on touch devices
+	body.showTouchMenu {
+
+		#mainNav {
+			max-height: 6 * $menu-item-height-s + 2 * $menu-padding-s;
+			border-bottom: 1px solid $light-grey;
+		}
+
+		#touchMenuToggle {
+
+			a {
+
+				&.open  {
+					z-index: 0;
+					opacity: 0;
+					-webkit-transform: rotate(180deg); // Chrome 35-, S/iOS 8-, A 4.4-
+					    -ms-transform: rotate(180deg); // IE9
+					        transform: rotate(180deg);
+				}
+
+				&.close {
+					z-index: 1;
+					opacity: 1;
+					-webkit-transform: rotate(180deg); // Chrome 35-, S/iOS 8-, A 4.4-
+					    -ms-transform: rotate(180deg); // IE9
+					        transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Animated line on navigation hover
+ *  no-touch/desktop
+*/
+
+@include media-min-medium {
+
+	html.no-touch {
+
+		#mainNav {
+
+			a {
+				position: relative;
+
+				@include after(0, 1px, $right: 0, $bottom: -1px) {
+					background-color: $nav-color;
+					@include single-transition(width, $ani-speed-a);
+				}
+
+				@include hf {
+
+					&:after {
+						width: 100%;
+						left: 0;
+						right: auto;
+					}
+				}
+			}
+
+			.current-menu-item,
+			.current_page_item,
+			.current_page_ancestor {
+
+				a {
+
+					&:after {
+						background-color: $nav-active;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Zoom effect on product hover
+ *  no-touch
+*/
+
+// Enable again when blocks link to collection/product page
+// html.touch
+// .touch {
+
+// 	.product {
+
+// 		.info {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+// html.no-touch {
+
+	body.home,
+	body.collection {
+		$ani: $ani-speed * 2;
+		$zoom: 0.080;
+
+		.product {
+
+			.thumb,
+			.info {
+				// Give me full GPU, Scotty
+				-webkit-transform: translate3d(0, 0, 0); // Chrome 35-, S/iOS 8-, A 4.4-
+				    -ms-transform: translate3d(0, 0, 0); // IE9
+				        transform: translate3d(0, 0, 0);
+				@include single-transition(all, $ani);
+			}
+
+			.info {
+				opacity: 0;
+				-webkit-transform: scale(1 + $zoom); // Chrome 35-, S/iOS 8-, A 4.4-
+				    -ms-transform: scale(1 + $zoom); // IE9
+				        transform: scale(1 + $zoom);
+			}
+
+			a {
+
+				@include hf {
+
+					.thumb {
+						-webkit-transform: scale(1 + $zoom); // Chrome 35-, S/iOS 8-, A 4.4-
+						    -ms-transform: scale(1 + $zoom); // IE9
+						        transform: scale(1 + $zoom);
+					}
+
+					.info {
+						opacity: 1;
+						-webkit-transform: scale(1); // Chrome 35-, S/iOS 8-, A 4.4-
+						    -ms-transform: scale(1); // IE9
+						        transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+// }
+
+
+
+
+
+
+/**
+ *  Collapsible panels
+ *  all >= medium
+*/
+
+@include media-min-medium {
+
+	// Closed
+	.panel {
+
+		.panel-toggle {
+			// position: relative;
+
+			a {
+				position: absolute;
+				cursor: pointer;
+
+				&.open {
+					z-index: 1;
+					opacity: 1;
+				}
+
+				&.close {
+					z-index: 0;
+					opacity: 0;
+				}
+			}
+		}
+
+		.panel-target {
+			max-height: 0;
+			overflow: hidden;
+			@include single-transition(max-height);
+		}
+
+
+		// Opened
+		&.open {
+
+			.panel-toggle {
+
+				a {
+
+					&.open {
+						z-index: 0;
+						opacity: 0;
+					}
+
+					&.close {
+						z-index: 1;
+						opacity: 1;
+					}
+				}
+			}
+
+			.panel-target {
+				max-height: 100%; // set dynamically how?
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Collapsible drawers
+ *  all >= medium
+*/
+
+@include media-min-medium {
+
+	// Closed
+	.drawer {
+
+		.drawer-toggle {
+			cursor: pointer;
+		}
+
+		.drawer-target {
+			@include translateX(100%);
+			@include single-transition(all);
+		}
+
+
+		// Small sliding animation when hovering the drawer
+		&.hover {
+
+			.drawer-target {
+				@include translateX(97%); // 10px / 340px = 3%
+			}
+		}
+
+		&.open {
+
+			.drawer-target {
+				@include translateX(0);
+			}
+
+			.drawer-toggle {
+
+				a {
+
+					&:before {
+						-webkit-transform: rotate(-180deg);
+						        transform: rotate(-180deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Sticky footer
+ *  mobile/tablet
+*/
+
+@include media-max-medium {
+	// footerTop 40px + footerBottom max 382px = 422px
+	// is safe-ish; set dynamically (inline via js?)
+	$h: 422px;
+
+	#content {
+		// min-height: 640px - $header-height-s; // 640px height HTC One
+		// min-height: 100%;
+		margin-bottom: $h;
+		background-color: $white;
+		border-bottom: 1px solid $dark-white;
+	}
+
+	#footer {
+		min-height: $h;
+		position: fixed;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	#footerBottom {
+		max-width: $small;
+		margin: auto auto;
+	}
+}
+
+
+
+
+
+
+/**
+ *  Collapsible sticky footer
+ *  desktop
+*/
+
+@include media-min-medium {
+
+	#container {
+		position: relative;
+	}
+
+
+	// Expanded footer
+	#footer {
+		position: absolute;
+		bottom: 0;
+
+		.panel-target {
+			max-height: none;
+		}
+	}
+
+
+	// Collapsible footer
+	#footer.sticky {
+		position: fixed;
+		top: 100%;
+		bottom: auto;
+		@include single-transition(transform);
+
+
+		// Opened
+		&.open {
+			@include translateY(-100%);
+
+			#footerTop {
+				box-shadow: 0 -1px 2px 0 black(0.1);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Misc animations
+ *  no-touch
+*/
+
+
+html.no-touch {
+
+	// all: color, background-color (icons)
+	a {
+		@include single-transition(all, $ani-speed-a);
+	}
+
+
+	// Easter egg: slowly colour the logo background
+	#logo {
+		@include hf {
+			background-color: $brand-secondary;
+			@include single-transition(background-color, 10000ms);
+		}
+	}
+
+
+	// all: color, background-color, border-color
+	// .button {}
+	.button-go {
+		@include single-transition(all, $ani-speed-a);
+
+		&:before,
+		&:after {
+			@include single-transition(opacity, $ani-speed-a);
+		}
+	}
+
+
+	// all: opacity and transform + prefixes
+	.panel-toggle,
+	.drawer-toggle {
+
+		a {
+
+			&:before,
+			&:after {
+				@include single-transition(all, $ani-speed-a);
+			}
+		}
+	}
+
+
+	// Set a delay on "mouseout", so the collapsing and fading looks better
+	.product-filter {
+		@include single-transition(background-color, $ani-speed-a, $ani-speed-a);
+
+		@include hf {
+			@include single-transition(background-color, $ani-speed-a);
+		}
+
+		h3 {
+
+			// all: transform + prefixes
+			&:after{
+				@include single-transition(all, $ani-speed-a);
+			}
+		}
+
+		.product-filter-list {
+			@include single-transition(max-height, $ani-speed-a);
+		}
+	}
+
+
+	input[type="text"],
+	input[type="email"] {
+		@include single-transition(border-color, $ani-speed-a);
+	}
+
+	// all: color, background-color, border-color
+	input[type="submit"] {
+		@include single-transition(all, $ani-speed-a);
+	}
+
+
+	#footerTop {
+
+		a {
+
+			&.open,
+			&.close {
+
+				span {
+
+					&:before,
+					&:after {
+						@include single-transition(top, $ani-speed-a);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

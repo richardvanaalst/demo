@@ -1,0 +1,268 @@
+  // //
+ // //  Forms
+// //
+
+
+/**
+ *  (Re)Set some browser defaults
+*/
+
+input,
+textarea {
+	border-radius: 0; // remove webkit default
+	outline: 0 auto -webkit-focus-ring-color;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+:-moz-ui-invalid:not(output) {
+	box-shadow: none;
+}
+
+// Firefox 19+ sets default opacity: 0.4
+::-moz-placeholder {
+	opacity: 1;
+}
+
+
+
+
+
+
+/**
+ * Placeholders
+*/
+
+::-webkit-input-placeholder{
+	color: $black;
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+	color: $light-grey;
+}
+
+
+::-moz-placeholder {
+	color: $black;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+	color: $light-grey;
+}
+
+
+:-ms-input-placeholder {
+	color: $black;
+}
+
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+	color: $light-grey;
+}
+
+
+
+
+
+
+/**
+ *  Base form elements
+*/
+
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+	width: 100%;
+	height: 40px;
+	font-family: $lato;
+	font-size: em(16px);
+	line-height: normal;
+	vertical-align: middle;
+
+	@include media-min-large {
+		height: 43px;
+		font-size: em(18px);
+	}
+}
+
+
+input[type="text"],
+input[type="email"] {
+	$p: 12px;
+
+	padding: 0 scale-s($p);
+	color: $text-color;
+	background-color: $bg-color;
+	border: 2px solid $light-grey;
+
+	@include media-min-medium {
+		padding: 0 scale-m($p);
+	}
+
+	@include media-min-medium {
+		padding: 0 scale-l($p);
+	}
+
+	&:focus {
+		border-color: $light-grey;
+		border-bottom-color: $black;
+	}
+}
+
+
+input[type="submit"] {
+	@extend %button-base;
+	font-size: em(12px);
+	color: $white;
+	background-color: $black;
+	border-color: $black;
+
+	@include media-min-medium {
+		padding: 0 scale-m($button-padding);
+		font-size: em($button-font);
+	}
+
+	@include media-min-large {
+		padding: 0 scale-l($button-padding);
+	}
+}
+
+
+
+
+
+
+/**
+ *  Mailchimp subscribe form
+*/
+
+#mc4wp-form-1 {
+
+	table {
+		width: 100%;
+	}
+
+	td.mc-input {
+		width: 75%;
+	}
+
+	td.mc-submit {
+		min-width: 90px;
+		padding-left: 10px;
+	}
+
+
+	.mc4wp-alert {
+		margin-top: 1em;
+	}
+
+
+	&.mc4wp-form-error {
+
+		input[type="email"] {
+			border-color: $light-grey;
+			border-bottom-color: $alert-red;
+		}
+	}
+
+
+	@include media-min-medium {
+
+		td.mc-submit {
+			padding-left: 20px;
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Contact form 7
+*/
+.wpcf7 {
+
+	form > p {
+		margin: 14px 0;
+		overflow: hidden;
+	}
+
+	span.wpcf7-form-control-wrap {
+		display: block !important;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		background-color: #e5e5e5;
+		border: 2px solid #e5e5e5;
+		@include transition(all 0.14s ease-in-out);
+
+		&:focus {
+			background-color: $white;
+			border: 2px solid $black;
+		}
+	}
+
+	textarea {
+		min-height: 206px;
+		padding-top: 4px;
+	}
+
+	input[type="submit"] {
+		padding: 0 20px;
+		float: right;
+		line-height: 40px;
+		text-transform: uppercase;
+		background-color: $white;
+		border: 2px solid $black;
+		@include transition(all 0.14s ease-in-out);
+
+		&:hover,
+		&:focus {
+			color: $white;
+			background-color: $black;
+		}
+	}
+
+
+	.wpcf7-response-output {
+		padding: 0 12px;
+		margin: 0;
+		line-height: 39px;
+		border: 2px solid $black;
+	}
+
+	input.wpcf7-not-valid,
+	textarea.wpcf7-not-valid {
+		background-color: $white;
+		border-bottom-color: darken(red, 8%);
+	}
+
+	.wpcf7-not-valid-tip {
+		// display: none;
+		margin-top: 4px;
+		color: darken(red, 8%);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,217 @@
+  // //
+ // //  Variables
+// //
+
+
+// //  Sizes
+
+$scale-s:              1/2;
+$scale-m:              3/4;
+$scale-l:              1;
+
+
+
+$gutter:                32px;
+$gutter-s:              scale-s($gutter); // 16
+$gutter-m:              scale-m($gutter); // 24
+$gutter-l:              scale-l($gutter); // 32
+
+$body-gutter-s:         $gutter-s * 2;    // 32
+$body-gutter-m:         $gutter-m * 2;    // 48
+$body-gutter-l:         $gutter-l * 2;    // 64
+
+
+$xsmall:                 320px;
+$small:                  480px;
+$medium:                 768px;
+$large:                  960px; // 1024px;
+$xlarge:                1180px;
+$maxlarge:              $xlarge + $body-gutter-l; // 1244px
+
+$header-height-s:        80px;
+$header-height-m:       151px; // 75+32+44
+$header-height-l:       200px;
+
+$topnav-height:         44px;
+
+$menu-padding-s:        25px;
+$menu-item-height-s:    45px;
+$menu-item-height-m:    scale-m(18px);
+$menu-item-height-l:    scale-l(18px);
+
+$footerTop-height-s:    40px;
+$footerTop-height-m:    60px;
+$footerTop-height-l:    60px;
+
+
+
+
+
+
+// //  Grid
+
+// Size of grid gutters
+$grid-gutter:           $gutter;
+$grid-gutter-s:         $gutter-s;
+$grid-gutter-m:         $gutter-m;
+$grid-gutter-l:         $gutter-l;
+
+
+// Size types of grid items (x*y)
+$grid-items:            (
+	(1, 1),
+	(1, 2),
+	(2, 1),
+	(2, 2),
+	(2, 3),
+	(2, 9), // About text
+	(3, 2)
+);
+
+
+// Size of grid items in px
+$grid-size:             271px;
+$grid-1:                grid-size(1); //  271
+$grid-2:                grid-size(2); //  574
+$grid-3:                grid-size(3); //  877
+$grid-4:                grid-size(4); // 1180
+
+
+// Size of grid
+$grid-1-s:              scale-s($grid-1, true);   //  135 (.5)
+$grid-2-s:              scale-s($grid-2, true);   //  287
+$grid-3-s:              scale-s($grid-3, true);   //  438 (.5)
+$grid-4-s:              scale-s($grid-4, true);   //  590
+$grid-1-m:              scale-m($grid-1, true);   //  203 (.25)
+$grid-2-m:              scale-m($grid-2, true);   //  430 (.5)
+$grid-3-m:              scale-m($grid-3, true);   //  657 (.75)
+$grid-4-m:              scale-m($grid-4, true);   //  885
+$grid-1-l:              scale-l($grid-1, true);   //  271
+$grid-2-l:              scale-l($grid-2, true);   //  574
+$grid-3-l:              scale-l($grid-3, true);   //  877
+$grid-4-l:              scale-l($grid-4, true);   // 1180
+
+// Size of viewport per grid
+$grid-1-s-vp:           $grid-1-s + $body-gutter-s; //  167
+$grid-2-s-vp:           $grid-2-s + $body-gutter-s; //  319
+$grid-3-s-vp:           $grid-3-s + $body-gutter-s; //  470
+$grid-4-s-vp:           $grid-4-s + $body-gutter-s; //  622
+$grid-1-m-vp:           $grid-1-m + $body-gutter-m; //  251
+$grid-2-m-vp:           $grid-2-m + $body-gutter-m; //  478
+$grid-3-m-vp:           $grid-3-m + $body-gutter-m; //  705
+$grid-4-m-vp:           $grid-4-m + $body-gutter-m; //  933
+$grid-1-l-vp:           $grid-1-l + $body-gutter-l; //  335
+$grid-2-l-vp:           $grid-2-l + $body-gutter-l; //  638
+$grid-3-l-vp:           $grid-3-l + $body-gutter-l; //  941
+$grid-4-l-vp:           $grid-4-l + $body-gutter-l; // 1244
+
+
+// Min width to display all Masonry items
+// $msry-min:              $msry-3-l + $body-gutter-s; // 909
+$msry-min:              $medium; // 768
+
+
+
+
+
+
+// //  Sizes font, buttons
+
+$base-font-size:        16px;
+
+$button-min-height:     40px;
+$button-height:         56px;
+$button-padding:        20px;
+$button-font:           15px;
+$button-arrow:          18px;
+
+
+
+
+// //  Colours
+
+$white:                 #fff;
+$dark-white:            #f5f5f2;
+$light-grey:            #e6e6e6;
+$grey:                  #ccc;
+$dark-grey:             #aaa;
+$black:                 #000;
+
+
+$brand-primary:         #1d1d1b; // almost black
+$brand-secondary:       #f19612; // autumn gold
+$brand-tertiary:        #BADA55; // not used
+
+
+$bg-color:              $white;
+$text-color:            $black;
+// $border-color:          #ccc;
+
+$link-color:            $black;
+$link-hover:            $brand-secondary;
+$link-hover-bg:         $link-hover;
+$link-active:           $link-hover;
+
+$nav-color:             $black;
+$nav-hover:             $brand-secondary;
+$nav-hover-bg:          $dark-white;
+$nav-active:            $nav-color;
+
+$button-border:         #c4cdcf;
+$button-hover:          $white;
+$button-hover-bg:       $brand-secondary;
+
+
+// Waar gebruikt? => forms
+$alert-green:           #e6efc2;
+$alert-yellow:          #ebe16f;
+$alert-red:             #d60000;
+$alert-blue:            #d5edf8;
+// $disabled-gray:         #cfcfcf;
+
+
+
+
+
+
+// //  Sprite settings
+
+$sprite-icons:          sprite-map("icons/*.png");
+$original-sprite-size:  80px;
+$default-sprite-size:   $original-sprite-size / 2;
+$sprite-positions:      (
+	"arrow-down",
+	"arrow-left",
+	"arrow-right",
+	"arrow-up",
+	"button-arrow-black",
+	"button-arrow-white",
+	"nav-close",
+	"nav-open",
+	"facebook-black-l",
+	"facebook-black",
+	"facebook-white-l",
+	"facebook-white",
+	"twitter-black-l",
+	"twitter-black",
+	"twitter-white-l",
+	"twitter-white"
+);
+
+
+
+
+
+
+// //  Transition defaults
+
+$ani-speed:                   300ms;
+$ani-speed-a:                 150ms;
+$default-transition-duration: $ani-speed;
+$default-transition-function: ease-in-out;
+$default-transition-delay:    false;
+
+
+
+
+

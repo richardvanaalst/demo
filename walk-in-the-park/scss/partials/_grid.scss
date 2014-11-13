@@ -1,0 +1,280 @@
+/** ** ** ** ** ** ** ** ** **
+  Grid with Masonry
+********************/
+
+// #masonryGrid,
+.grid {
+	max-width: 1180px;
+	margin: 0 auto;
+	overflow: hidden;
+	// Commander Spock, engage GPU
+	-webkit-transform: translate3d(0, 0, 0); // Chrome 35-, S/iOS 8-, A 4.4-
+	    -ms-transform: translate3d(0, 0, 0); // IE9
+	        transform: translate3d(0, 0, 0);
+
+
+	// Small devices ("mobile")
+
+	// Vewy vewy small
+	width: $grid-2-s;
+
+	// 470.5 - See specific pages below
+	// @include media-min( $grid-3-s + $body-gutter-s ) {
+		// width: $grid-3-s;
+	// }
+
+	// 622
+	@include media-min( $grid-4-s + $body-gutter-s ) {
+		width: $grid-4-s;
+	}
+
+
+	// Medium to large devices ("tablet")
+
+	// 768 - See specific pages below
+	// @include media-min-medium {
+		// width: $grid-3-m;
+	// }
+
+	// 933
+	@include media-min( $grid-4-m + $body-gutter-m ) {
+		width: $grid-4-m;
+	}
+
+
+	// Large to humongous devices ("laptop/desktop")
+
+ 	// 960 - See specific pages below
+	// @include media-min-large {
+		// width: $grid-3-l;
+	// }
+
+	// 1244
+	@include media-min( $grid-4-l + $body-gutter-l ) {
+		width: $grid-4-l;
+	}
+}
+
+
+body.home,
+body.collection {
+
+	.grid {
+		// 470.5-622
+		@include media-min( $grid-3-s + $body-gutter-s ) {
+		@include media-max( $grid-4-s + $body-gutter-s ) {
+			width: $grid-3-s;
+		}}
+
+		// 768-933
+		@include media-min-medium {
+		@include media-max( $grid-4-m + $body-gutter-m ) {
+			width: $grid-3-m;
+		}}
+
+		// 960-1244
+		@include media-min-large {
+		@include media-max( $grid-4-l + $body-gutter-l ) {
+			width: $grid-3-l;
+		}}
+	}
+}
+
+
+body.single-products,
+body.about,
+body.retailer {
+
+	.grid {
+		// 768-933 - single column
+		@include media-min-medium {
+		@include media-max( $grid-4-m + $body-gutter-m ) {
+			width: $grid-2-m;
+		}}
+
+		// 960-1244 - single column
+		@include media-min-large {
+		@include media-max( $grid-4-l + $body-gutter-l ) {
+			width: $grid-2-l;
+		}}
+	}
+
+	.grid-2x9 {
+		height: auto;
+	}
+}
+
+
+body.about {
+
+	.grid-2x9 {
+		// 622-768 - two columns
+		@include media-min( $grid-4-s + $body-gutter-s ) {
+		@include media-max-medium {
+			min-height: $grid-3-s;
+		}}
+
+		// 933-960 - two columns
+		@include media-min( $grid-4-m + $body-gutter-m ) {
+		@include media-max-large {
+			min-height: $grid-3-m;
+		}}
+
+		// 1244 - two columns
+		@include media-min( $maxlarge ) {
+			min-height: $grid-3-l;
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  For sizing the Masonry grid only
+*/
+
+.masonry-grid-sizer,
+.masonry-gutter-sizer {
+	position: absolute;
+	top: -100%;
+	left: -100%;
+}
+
+@include media-max-medium {
+	.masonry-grid-sizer   { width: $grid-1-s; }
+	.masonry-gutter-sizer {	width: $grid-gutter-s; }
+}
+
+@include media-min-medium {
+	.masonry-grid-sizer   { width: $grid-1-m; }
+	.masonry-gutter-sizer { width: $grid-gutter-m; }
+}
+
+@include media-min-large {
+	.masonry-grid-sizer   { width: $grid-1-l; }
+	.masonry-gutter-sizer { width: $grid-gutter-l; }
+}
+
+
+
+
+
+
+/**
+ *  Grid items
+*/
+
+.grid-item {
+	margin-bottom: $grid-gutter-s;
+
+	.grid-item {
+		margin-right: $grid-gutter-s;
+	}
+}
+
+
+@each $x, $y in $grid-items {
+
+	.grid-#{$x} {
+		width: scale-s( grid-size($x), true );
+	}
+
+	.grid-#{$x}x#{$y} {
+		width: scale-s( grid-size($x), true );
+		height: scale-s( grid-size($y), true );
+	}
+}
+
+
+@include media-min-medium {
+
+	.grid-item {
+		margin-bottom: $grid-gutter-m;
+
+		.grid-item {
+			margin-right: $grid-gutter-m;
+		}
+	}
+
+
+	@each $x, $y in $grid-items {
+
+		.grid-#{$x} {
+			width: scale-m( grid-size($x), true );
+		}
+
+		.grid-#{$x}x#{$y} {
+			width: scale-m( grid-size($x), true );
+			height: scale-m( grid-size($y), true );
+		}
+	}
+}
+
+
+@include media-min-large {
+
+	.grid-item {
+		margin-bottom: $grid-gutter-l;
+
+		.grid-item {
+			margin-right: $grid-gutter-l;
+		}
+	}
+
+
+	@each $x, $y in $grid-items {
+
+		.grid-#{$x} {
+			width: scale-l( grid-size($x), true );
+		}
+
+		.grid-#{$x}x#{$y} {
+			width: scale-l( grid-size($x), true );
+			height: scale-l( grid-size($y), true );
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Exceptions for 2x2 grid-in-grid block
+*/
+
+.grid-2x2 {
+
+	.grid-item {
+		float: left;
+
+		&:nth-child(2),
+		&:nth-child(4),
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:nth-child(3),
+		&:nth-child(4),
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,241 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+
+
+@mixin span-area($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	@if ($top != auto) { top: $top; }
+	@if ($left != auto) { left: $left; }
+	@if ($right != auto) { right: $right; }
+	@if ($bottom != auto) { bottom: $bottom; }
+}
+
+
+@mixin span-parent() {
+	@include span-area(0, 0, 0, 0);
+}
+
+
+
+
+@mixin cf() {
+	&:before, &:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+// Hover, focus & active on links
+@mixin hf() {
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+
+
+
+// Logo size and position in aspect ratio
+@mixin logo-box($h, $scale: s) {
+	// default logo: 398px x 240px
+	$w: $h * 398/240;
+
+	// $scale = s
+	$header-height: $header-height-s;
+	$top: ($header-height - $h) / 2;
+	$left: $gutter-s;
+
+	@if ($scale == m or $scale == l) {
+		@if ($scale == m) {
+			$header-height: $header-height-m;
+		}
+		@else if ($scale == l) {
+			$header-height: $header-height-l;
+		}
+
+		$top: ($topnav-height + $header-height - $h) / 2;
+		$left: 50%;
+	}
+
+	width: $w;
+	height: $h;
+	top: $top;
+	left: $left;
+	@if ($scale != s) {
+		margin-left: -$w / 2;
+	}
+}
+
+
+
+
+
+
+// Hide the element, when dir=ltr
+@mixin hide() {
+	position: absolute;
+	top: -100%;
+	left: -100%; // -999em;
+	right: auto;
+}
+
+
+
+// Hide the text inside the element
+@mixin hide-text() {
+	font: 0/0 a;
+	color: transparent;
+}
+
+// Hide the text inside the element, when dir=ltr
+@mixin hide-text-the-old-way() {
+	display: block;
+	overflow: hidden;
+	text-indent: 100%; // -999em;
+	//direction: ltr;
+	white-space: nowrap;
+}
+
+
+
+// Remove list style form ul or ol
+@mixin no-list() {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+
+
+
+// Before and after pseudo-elements
+@mixin _pseudo($pseudo, $width: null, $height: null,
+	$top: auto, $left: auto, $right: auto, $bottom: auto,
+	$display: block, $position: absolute, $parent-position: false, $content: "") {
+
+	@if ( $parent-position == true and $position == absolute ) {
+		position: relative;
+	}
+
+	&:#{$pseudo} {
+		display: $display;
+		@if ($width) { width: $width; }
+		@if ($height) { height: $height; }
+		position: $position;
+		@if ($top != auto) { top: $top; }
+		@if ($left != auto) { left: $left; }
+		@if ($right != auto) { right: $right; }
+		@if ($bottom != auto) { bottom: $bottom; }
+		content: $content;
+		@content;
+	}
+}
+
+@mixin before($width: null, $height: null,
+	$top: auto, $left: auto, $right: auto, $bottom: auto,
+	$display: block, $position: absolute, $parent-position: false, $content: "") {
+
+	@include _pseudo(before, $width, $height, $top, $left, $right, $bottom, $display, $position, $parent-position, $content) {
+		@content;
+	}
+}
+
+@mixin after($width: null, $height: null,
+	$top: auto, $left: auto, $right: auto, $bottom: auto,
+	$display: block, $position: absolute, $parent-position: false, $content: "") {
+
+	@include _pseudo(after, $width, $height, $top, $left, $right, $bottom, $display, $position, $parent-position, $content) {
+		@content;
+	}
+}
+
+
+
+
+// Add sprite background image and calculate position according to its size.
+@mixin icons-sprite($icon, $size: $default-sprite-size, $scale: 1) {
+	$pos: index($sprite-positions, $icon) * $scale;
+	$bg-size: $default-sprite-size * $scale;
+
+	background-image: $sprite-icons;
+	background-position: sprite-pos($size, $pos, $scale);
+	background-repeat: no-repeat;
+	background-size: $bg-size auto;
+}
+
+
+
+
+// Media Queries
+@mixin media-max($width) {
+	@media only screen and (max-width: $width - 1) {
+		@content;
+	}
+}
+
+@mixin media-min($width) {
+	@media only screen and (min-width: $width) {
+		@content;
+	}
+}
+
+// Most used given own mixin
+@mixin media-max-medium($dif: 0) {
+	@include media-max($medium + $dif) {
+		@content;
+	}
+}
+
+@mixin media-min-medium($dif: 0) {
+	@include media-min($medium + $dif) {
+		@content;
+	}
+}
+
+@mixin media-max-large($dif: 0) {
+	@include media-max($large + $dif) {
+		@content;
+	}
+}
+
+@mixin media-min-large($dif: 0) {
+	@include media-min($large + $dif) {
+		@content;
+	}
+}
+
+
+@mixin media-retina() {
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	       only screen and (min-resolution: 144dpi) {
+		@content;
+	}
+}
+
+
+

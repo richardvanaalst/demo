@@ -1,0 +1,227 @@
+  // //
+ // //  Buttos
+// //
+
+
+// //  Extendables
+
+// Button base
+%button-base {
+	display: block;
+	max-width: 212px;
+	text-transform: uppercase;
+	border: 1px solid;
+
+	@extend %button-hover;
+	// @extend %button-active;
+}
+
+
+// Hover/focus/active base
+%button-hfa {
+	color: $button-hover !important;
+	background-color: $button-hover-bg !important;
+	border-color: $button-hover-bg !important;
+}
+
+
+// Hover/focus
+%button-hover {
+	@include hf {
+		@extend %button-hfa;
+	}
+}
+
+// Active
+%button-active {
+	&:active {
+		@extend %button-hfa;
+	}
+}
+
+
+
+
+// Regular button
+%button {
+	@extend %button-base;
+	padding: 0 scale-s($button-padding);
+	font-size: em(12px);
+	line-height: $button-min-height;
+	color: $black;
+	background-color: transparent;
+	border-color: $button-border;
+
+	@include media-min-medium {
+		padding: 0 scale-m($button-padding);
+		font-size: em($button-font);
+		line-height: scale-m($button-height);
+	}
+
+	@include media-min-large {
+		padding: 0 scale-l($button-padding);
+		line-height: scale-l($button-height);
+	}
+}
+
+
+
+
+
+
+// //  Classes
+
+// /**
+//  *  Regular button
+// */
+//
+// .button {
+// 	@extend %button;
+// }
+
+
+
+
+
+
+/**
+ *  Button with arrow
+*/
+
+.button-go {
+	@extend %button;
+	position: relative;
+
+	&:before {
+		opacity: 1;
+	}
+
+	&:after {
+		opacity: 0;
+	}
+
+	@include hf {
+
+		&:before {
+			opacity: 0;
+		}
+
+		&:after {
+			opacity: 1;
+		}
+	}
+
+
+	$h: $button-min-height;
+	$p: scale-s($button-padding);
+	$arrowsize: scale-s($button-arrow);
+
+	padding-right: $p + $arrowsize + $p/2;
+
+	@include before($arrowsize, $arrowsize, ($h - $arrowsize) / 2, $right: $p) {
+		@include icons-sprite("button-arrow-black", $arrowsize, $scale-s);
+	}
+
+	@include after($arrowsize, $arrowsize, ($h - $arrowsize) / 2, $right: $arrowsize) {
+		@include icons-sprite("button-arrow-white", $arrowsize, $scale-s);
+	}
+
+
+	@include media-min-medium {
+		$h: scale-m($button-height);
+		$p: scale-m($button-padding);
+		$arrowsize: scale-m($button-arrow);
+
+		padding-right: $p + $arrowsize + $p/2;
+
+		@include before($arrowsize, $arrowsize, ($h - $arrowsize) / 2, $right: $arrowsize) {
+			@include icons-sprite("button-arrow-black", $arrowsize, $scale-m);
+		}
+
+		@include after($arrowsize, $arrowsize, ($h - $arrowsize) / 2, $right: $arrowsize) {
+			@include icons-sprite("button-arrow-white", $arrowsize, $scale-m);
+		}
+	}
+
+
+	@include media-min-large {
+		$h: scale-l($button-height);
+		$p: scale-l($button-padding);
+		$arrowsize: scale-l($button-arrow);
+
+		padding-right: $p + $arrowsize + $p/2;
+
+		@include before($arrowsize, $arrowsize, ($h - $arrowsize) / 2, $right: $arrowsize) {
+			@include icons-sprite("button-arrow-black", $arrowsize, $scale-l);
+		}
+
+		@include after($arrowsize, $arrowsize, ($h - $arrowsize) / 2, $right: $arrowsize) {
+			@include icons-sprite("button-arrow-white", $arrowsize, $scale-l);
+		}
+	}
+}
+
+
+
+
+
+.button-dl {
+	@extend .button-go;
+
+	&:before,
+	&:after {
+		@include transform(rotate(90deg));
+	}
+}
+
+
+
+
+
+
+
+
+/**
+ *  Footer button on mobile/tablet
+*/
+
+#footerBottom  {
+
+	.button-go {
+
+		@include media-max-medium {
+			$h: $button-min-height;
+			$f: 20px;
+			$arrowsize: 10px;
+
+			font-size: em( scale-s($f) );
+			line-height: $h / scale-s($f);
+			color: $white;
+			border-color: $white;
+
+			&:before {
+				top: ($h - $arrowsize) / 2;
+				@include icons-sprite("button-arrow-white", $arrowsize, $scale-s);
+			}
+		}
+
+		@extend %button-hover;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

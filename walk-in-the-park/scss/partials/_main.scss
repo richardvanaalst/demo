@@ -1,0 +1,1132 @@
+  // //
+ // //  Main Stylesheet
+// //
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  Grid items
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+/**
+ *  Quicklinks on homepage
+ *  on small devices
+*/
+
+#touchQuickLinks {
+
+	.grid-item {
+		width: 50%;
+		height: auto;
+		float: left;
+		padding-left: 8px;
+
+		&:first-child {
+			padding-left: 0;
+			padding-right: 8px;
+		}
+	}
+
+	.button-go {
+		$h: 40px;
+
+		line-height: $h;
+
+		&:before,
+		&:after {
+			top: ($h - scale-s($button-arrow)) / 2;
+		}
+	}
+
+	/* You shall not touch... on desktop */
+	@include media-min-medium {
+		display: none;
+	}
+}
+
+
+
+
+
+
+/**
+ *  Base grid item with image and info
+*/
+// 	Syntax:
+// 	div.grid-item
+// 		(a)
+// 			div.thumb / div.image
+// 				img
+// 			div.info
+// 				div.summary
+// 					span.collection
+// 					span.title
+// 					span.sku
+
+.grid-item {
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.info {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		span {
+			@extend .h2;
+		}
+
+		@include media-max-medium {
+
+			h1 {
+				font-size: em( 24px );
+			}
+		}
+	}
+
+	.summary {
+		$tb: percentage(30px / $grid-1);
+		$lr: percentage(40px / $grid-1);
+
+		@include span-area($tb, $lr, $tb, $lr);
+		color: $black;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  Home
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+// Hide certain large (non-square) blocks on small devices
+@include media-max($msry-min) {
+
+	.home {
+
+		.highlight-item,
+		.skyscraper {
+			display: none;
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Collapsible drawer
+*/
+
+.drawer {
+	$toggle-size: 50px;
+
+	@include media-max-medium {
+
+		.drawer-target {
+			display: none;
+		}
+	}
+
+
+	@include media-min-medium {
+		position: relative;
+
+		.drawer-target {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-color: $white;
+
+			.image {
+				position: absolute;
+			}
+		}
+
+		.drawer-toggle {
+			$top: 40px;
+
+			position: absolute;
+			top: $top;
+			left: scale-m(-$toggle-size);
+
+			a {
+				display: block;
+				width: scale-m($toggle-size);
+				height: scale-m($toggle-size);
+				@include hide-text;
+				background-color: $black;
+
+				@include before(100%, 100%) {
+					@include icons-sprite("arrow-left", scale-m($toggle-size), $scale-m);
+				}
+
+				@include hf {
+					background-color: $link-hover-bg;
+				}
+			}
+
+			@include media-min-large {
+				left: scale-l(-$toggle-size);
+
+				a {
+					width: scale-l($toggle-size);
+					height: scale-l($toggle-size);
+
+					@include before(100%, 100%) {
+						@include icons-sprite("arrow-left", scale-l($toggle-size), $scale-l);
+					}
+				}
+			}
+		}
+
+		.summary {
+			top: auto;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		&.open {
+
+			.drawer-toggle {
+
+				a {
+					background-color: $link-hover-bg;
+
+				}
+			}
+		}
+	}
+
+
+	// Alignment and spacing collapsing drawer target
+
+	$spacing: 35px;
+	$width: $grid-1-m + 2 * $spacing; // 273
+
+	@include media-min-medium {
+
+		.drawer-target {
+			width: $width;
+
+			.info {
+				$pos: percentage($spacing / $width);
+
+				left: $pos;
+				right: $pos;
+			}
+		}
+	}
+
+	@include media-min( 840px ) {
+
+		.drawer-target {
+			$spacing: 10px;
+			$pos: percentage($spacing / $width);
+
+			.image {
+				top: $pos;
+			}
+
+			.summary {
+				bottom: $pos;
+			}
+		}
+	}
+
+	@include media-min-large {
+
+		.drawer-target {
+			$spacing: 15px;
+			$pos: percentage($spacing / $width);
+
+			.image {
+				top: $pos;
+			}
+
+			.summary {
+				bottom: $pos;
+			}
+		}
+	}
+
+
+	$spacing: 35px;
+	$width: $grid-1-l + 2 * $spacing;
+
+	@include media-min($xlarge) {
+
+		.drawer-target {
+
+			width: $width;
+
+			.info {
+				$pos: percentage($spacing / $grid-1-l);
+
+				left: $pos;
+				right: $pos;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Big header visual
+*/
+
+.header-visual {
+
+	.button-go {
+		border-color: $black;
+	}
+
+
+	@include media-max-medium {
+		border-bottom: 1px solid $light-grey;
+
+		> .image {
+
+			.wrap {
+				display: none;
+			}
+		}
+	}
+
+
+	@include media-min-medium {
+
+		> .image {
+			position: relative;
+
+			.wrap {
+				@include span-parent;
+			}
+
+			.info {
+				max-width: 420px;
+				top: 25%;
+				left: auto;
+				right: 10%;
+
+				h1 {
+					font-size: em(38px);
+				}
+
+				h2 {
+					display: block;
+					font-size: em(35px);
+				}
+
+				.button-go {
+					display: inline-block;
+					margin-top: 1em;
+				}
+			}
+		}
+
+
+		> .info {
+			$wI: 340px;
+
+			.image {
+				$w: $grid-1 * $scale-m * $scale-m;
+
+				width: $w;
+				left: 0;
+				margin-left: percentage( ($wI - ($w)) / $wI ) / 2;
+			}
+		}
+	}
+
+
+	@include media-min-large {
+
+		> .info {
+			$wI: 340px;
+
+			.image {
+				$w: $grid-1 * $scale-l * $scale-m;
+
+				width: $w;
+				margin-left: percentage( ($wI - ($w)) / $wI ) / 2;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Product with thumbs 1x1 block
+*/
+
+.product {
+
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.info {
+		background-color: white(0.8);
+	}
+
+	.summary {
+		$border: 3px;
+		$container: $grid-1 - 2 * $border;
+
+		padding: percentage(14px / $container) percentage(20px / $container);
+		border: $border solid $black;
+	}
+}
+
+
+body.home {
+
+	.product {
+
+		a {
+			cursor: default;
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Promotion 2x2 block
+*/
+
+.promotion {
+
+	.info {
+		$position: ($grid-2 - $grid-1) / 2;
+		$trbl: percentage( ( $position) / $grid-2 );
+		$tb-s: $trbl * 6/8;
+		$rl-s: $trbl * 6/8;
+
+		top: $tb-s;
+		right: $rl-s;
+		bottom: $tb-s;
+		left: $rl-s;
+		background-color: $white;
+
+		@include media-min-medium {
+			top: $trbl;
+			right: $trbl;
+			bottom: $trbl;
+			left: $trbl;
+		}
+	}
+
+	.summary {
+		$t: percentage(35px / $grid-1);
+		$rbl: percentage(30px / $grid-1);
+
+		top:    $t;
+		right:  $rbl;
+		bottom: $rbl;
+		left:   $rbl;
+
+		@include media-min-medium {
+
+			.summary {
+				$t: percentage(50px / $grid-1);
+				$rbl: percentage(35px / $grid-1);
+
+				top:    $t;
+				right:  $rbl;
+				bottom: $rbl;
+				left:   $rbl;
+			}
+		}
+	}
+
+	.button-go {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+
+		@include media-max($large){
+			font-size: 12px;
+		}
+	}
+}
+
+
+
+
+
+
+/**
+ *  Big highlight item 3x2 block
+*/
+
+.highlight-item {
+
+	.info {
+
+		.image {
+			top: percentage(40px / 340px);
+		}
+	}
+
+	.summary {
+		// top: 385px;
+	}
+}
+
+
+
+
+
+
+/**
+ *  Subscribe to newsletter 1x2 block
+*/
+
+.newsletter {
+
+	.info {
+		padding-top: 10px;
+		border-top: 4px solid $black;
+
+		h1, span {
+			margin-bottom: 2px;
+		}
+
+		span {
+			display: block;
+		}
+
+		@include media-max-medium {
+
+			h1 {
+				font-size: em(18px);
+			}
+		}
+
+		@include media-min-medium {
+			padding-top: 30px;
+
+			h1, span {
+				margin-bottom: 10px;
+			}
+		}
+
+		@include media-min-large {
+			padding-top: 50px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  Collection
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+body.collection {
+
+	.content {
+
+		header {
+
+			@include media-min-medium {
+				padding-top: 40px;
+				padding-bottom: 20px;
+				position: relative;
+			}
+		}
+	}
+}
+
+
+.product-filter {
+	$h: 40px;
+	$padding: 20px;
+	$arrowsize: 14px;
+
+	min-width: 200px;
+	position: relative;
+	background-color: $white;
+
+	@include media-min-medium {
+		position: absolute;
+		top: 40px;
+		right: 0;
+		z-index: 1;
+	}
+
+	a {
+		display: block;
+		padding: 0 $padding;
+	}
+
+	h3 {
+		padding-left: $padding;
+		padding-right: ($padding + $arrowsize + $padding);
+		font-size: em(15px);
+		line-height: $h;
+		border: 1px solid $light-grey;
+
+		@include before($arrowsize, $arrowsize, ($h - $arrowsize)/2, $right: $padding) {
+			@include icons-sprite("arrow-down", $arrowsize);
+		}
+
+		@include after($arrowsize, $arrowsize, ($h - $arrowsize)/2, $right: $padding) {
+			@include icons-sprite("arrow-down", $arrowsize);
+		}
+
+		span {
+			font-weight: normal;
+		}
+	}
+
+	.product-filter-list {
+		max-height: 0;
+		overflow: hidden;
+
+		ul {
+			width: 100%;
+			@include no-list;
+			font-size: em(16px);
+			line-height: 36px;
+			text-transform: uppercase;
+		}
+
+		a {
+
+			@include hf {
+				background-color: $grey;
+			}
+		}
+	}
+
+	.product-filter-select {
+		@include span-parent;
+		opacity: 0;
+
+		select {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+
+	@include hf {
+
+		.product-filter-list {
+			max-height: 3 * 36px; // 3 collections: all, bags, shoes
+		}
+	}
+}
+
+
+html.touch {
+
+	.product-filter-list {
+		display: none;
+	}
+}
+
+html.no-touch {
+
+	.product-filter {
+
+		@include hf {
+			background-color: $light-grey;
+
+			h3 {
+				$h: 40px;
+				$arrowsize: 14px;
+
+				cursor: pointer;
+
+				&:after {
+					top: ($h - $arrowsize) / 2 + 6px;
+				}
+			}
+		}
+	}
+
+	.product-filter-select {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  Store locator
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+//	.content {}
+//		header{}
+//			.city-filter {}
+//				input#cityFilter {}
+//		.stores-list {}
+//			.offline {}
+//				ul#cityList.cities {}
+//					li.city {}
+//						h1.h3 {}
+//						ul#storeListN.stores {}
+//							h2.h4 {}
+//							li.store {}
+//			.online {}
+//	.map {}
+
+body.store-locator,
+body.contact {
+	$online-toggle-height: 75px;
+	$map-min-height: 840px;
+
+	@include media-min-medium {
+
+		// For positioning the map
+		// .main.wrap {
+		.main {
+			min-height: $map-min-height;
+			position: relative;
+		}
+
+		.content {
+			padding-top: 60px;
+			padding-bottom: 0;
+		}
+	}
+
+
+	.content {
+
+		@include media-min-medium {
+			width: $grid-1-m * 1.5;
+			padding-right: $gutter-m;
+		}
+
+		@include media-min-large {
+			width: $grid-1-l * 1.5;
+			padding-right: $gutter-l;
+		}
+	}
+
+
+	.stores-list {
+		padding-top: 25px;
+		padding-bottom: 25px;
+
+		ul {
+			@include no-list;
+		}
+
+		h1.h3 {
+			font-size: em(18px);
+			font-weight: 700;
+		}
+
+		h2.h4 {
+			font-size: em(17px);
+		}
+	}
+
+
+	#offline {
+
+		.cities {}
+
+		.city {
+			margin-top: 25px;
+
+			h1 {
+				margin-bottom: 10px;
+			}
+
+			@include media-min-medium {
+				margin-top: 40px;
+
+				h1 {
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		.store {
+			padding: 10px 0;
+
+			@include media-min-medium {
+				padding: 15px 0;
+			}
+
+			h2 {
+				text-transform: none;
+			}
+
+			p {
+				margin: 0;
+			}
+
+			a.phone {
+				cursor: text;
+			}
+
+			a.web {
+				text-decoration: underline;
+			}
+
+			@include media-max-medium {
+
+				span {
+					display: none;
+				}
+			}
+
+		}
+	}
+
+
+	#online {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+
+		.panel-toggle {
+			height: $online-toggle-height;
+			background-color: $white;
+
+			a {
+				$arrowsize: 20px;
+
+				width: 100%;
+				line-height: $online-toggle-height;
+				text-transform: uppercase;
+				border-top: 2px solid $light-grey;
+
+				@include after($arrowsize, $arrowsize, 5px, 2px, $display: inline-block, $position: relative) {
+				}
+
+				&.open {
+
+					&:after {
+						@include icons-sprite("arrow-up", $arrowsize);
+					}
+				}
+
+				&.close {
+
+					&:after {
+						@include icons-sprite("arrow-down", $arrowsize);
+					}
+				}
+			}
+		}
+
+		.panel-target {
+			background-color: $white;
+
+			li {
+				margin: 5px 0;
+			}
+		}
+
+		// Opened
+		&.open {
+
+			.panel-toggle {
+
+				a {
+				}
+			}
+
+			.panel-target {
+				// max-height: 800px; // ?
+			}
+		}
+	}
+
+
+	.map-embed {
+
+		@include media-max-medium {
+			display: none;
+		}
+
+		@include media-min-medium {
+			height: $map-min-height;
+
+			background-color: $dark-white;
+			@include span-area(0, -$gutter-m, auto, $grid-1-m * 1.5);
+		}
+
+		@include media-min-large {
+			@include span-area(0, -$gutter-l, auto, $grid-1-l * 1.5);
+		}
+	}
+
+	#map-canvas {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+
+
+body.store-locator {
+
+	#cityFilter {
+		max-width: $grid-1-l + $gutter-l;
+		position: relative;
+
+		input {
+			font-size: 20px
+		}
+
+		a {
+			$size: 20px;
+
+			display: none;
+			width: $size;
+			height: $size;
+			position: absolute;
+			top: (43px - $size) / 2;
+			right: 10px;
+			font: 0/0 a;
+			color: transparent;
+			@include icons-sprite("nav-close", $size, $scale-m);
+			cursor: pointer;
+		}
+	}
+
+	#offline {
+
+		.cities {
+
+			> li {
+				display: none;
+			}
+		}
+	}
+
+
+	@include media-max-medium {
+
+		#offline {
+			min-height: 640px;
+		}
+	}
+
+	@include media-min-medium {
+		$fade: 40px;
+
+		.stores-list {
+			height: 100%;
+		}
+
+		#offline {
+
+			.cities {
+				margin-top: -40px;
+			}
+
+			.store {
+
+				@include media-min-medium {
+
+					@include hf {
+						background-color: $dark-white;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  About
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+// See _grid.scss for text block sizes
+body.about {
+
+	.header-visual {
+
+		> .image {
+
+			.info {
+				color: $white;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  Retailer
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+body.retailer {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+ *  Contact
+* ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+
+body.contact {
+
+	.content {
+
+		.button-go {
+			margin-top: 40px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+// Sass functions
+
+// Calculate px to em
+// +0.00001 for browser's rounding issues?
+@function em($size, $context: $base-font-size) {
+	@return 1em * ( round($size) / $context);
+}
+
+
+
+// Scale functions
+@function _scale($value, $scale, $round: false) {
+	$value: $value * $scale;
+
+	@if ($round == true) {
+		$value: floor($value);
+	}
+
+	@return $value;
+}
+
+@function scale-s($value, $round: false) {
+	@return _scale($value, $scale-s, $round);
+}
+
+@function scale-m($value, $round: false) {
+	@return _scale($value, $scale-m, $round);
+}
+
+@function scale-l($value, $round: false) {
+	@return _scale($value, $scale-l, $round);
+}
+
+
+
+
+// Colour & opacity
+// color: black(0.3) compiles to color: rgba(0, 0, 0, 0.3);
+
+// Black
+@function black($opacity) {
+	@return rgba(black, $opacity);
+}
+
+// White
+@function white($opacity) {
+	@return rgba(white, $opacity);
+}
+
+
+
+
+// Calculate margin of main nav items on desktop/no-touch
+@function nav-margin($width, $container) {
+	$max: $xlarge; // max width of container nav 1180px
+	$perc: $container / 100%;
+	@return percentage( $width / ($max * $perc) );
+}
+
+
+
+
+// Size of grid items and gutters
+// i items + i-1 gutters
+@function grid-size($i) {
+	$items: ($i * $grid-size);
+	$gutters: max($i - 1, 0) * $grid-gutter;
+	@return $items + $gutters;
+}
+
+
+
+
+// Calculate sprite position
+@function _sprite-pos($size: $default-sprite-size, $grid: 0) {
+	$grid-size: $grid * $default-sprite-size;
+	$sprite-pos: round( $grid-size + ($default-sprite-size - $size) / 2 );
+	@return -1 * $sprite-pos;
+}
+
+@function sprite-pos($size, $y: 0, $scale: 1) {
+	$x: 0;
+	$shift: 0;
+	$sprite-scale: $default-sprite-size / $original-sprite-size;
+
+	@if ($scale == $scale-s) {
+		// $shift: 1/4;
+		$shift: $sprite-scale - $scale-s * $sprite-scale;
+	}
+	@else if ($scale == $scale-m) {
+		// $shift: 1/8;
+		$shift: $sprite-scale - $scale-m * $sprite-scale;
+	}
+	@else if ($scale == $scale-l) {
+		// $shift: 0;
+		$shift: $sprite-scale - $scale-l * $sprite-scale;
+	}
+
+	@return _sprite-pos($size, $x - $shift) _sprite-pos($size, $y - $shift);
+}
+
+
+

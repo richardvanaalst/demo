@@ -1,0 +1,186 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          FCU default       fcutrecht.nl                         *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Basic styles
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default background image
+html { background-image:url("../img/default/background.jpg"); }*/
+/* Header
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default logo
+#logo { background-image:url("../img/default/logo.png"); }*/
+#headerImage {
+	background-image: url("../img/default/header.jpg");
+}
+/* Portal sites navigation
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#portalNav li {
+	background-image: url("../img/default/header.jpg");
+}
+#portalNav .default {
+	height: 33px;
+	margin-top: 0;
+	z-index: 7;
+	-moz-border-radius: 3px 3px 0 0;
+	-wekbit-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background-position: -194px 0;
+}
+#portalNav .default a {
+	text-shadow: 1px  1px 1px #000, 0 0 1px #000;
+}
+#portalNav .default a:hover,
+#portalNav .default a:focus {
+	color: #ff0;
+	background-color: transparent;
+}
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          Homepage customizable widgets                          *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/** General widgets
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** **/
+#widgetColumns .widgetColumn {
+	width: 310px;
+	float: left;
+	margin-right: 5px;
+}
+#widgetColumns .widget .toggle {
+	display: none;
+	position: absolute;
+	width: 19px;
+	height: 19px;
+	top: 10px;
+	right: 10px;
+	text-indent: -999em;
+	background: transparent url("../img/widgetSprite.png") -220px 0 no-repeat;
+}
+#widgetColumns .widget .toggle:hover {
+	background-position: -250px 0;
+}
+#widgetColumns.personalizationEnabled .drag h3 {
+	cursor: move;
+}
+#widgetColumns.personalizationEnabled .drag .toggle {
+	display: block;
+}
+/* Customizable widgets menu
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#widgetSelector {
+	width: 950px;
+	margin-left: -5px;
+	overflow: hidden;
+}
+#widgetSelector h6 {
+	display: none;
+}
+#widgetSelector .widgetBeltNav {
+	float: left;
+	z-index: 20;
+	/* Fallback for older browsers */
+
+	background-color: #cbcbcb;
+	background: -o-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: -ms-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: -moz-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+}
+#widgetSelector .widgetBeltNav.prev {
+	border-right: 1px solid #bbbbbb;
+}
+#widgetSelector .widgetBeltNav.next {
+	border-left: 1px solid #bbbbbb;
+}
+#widgetSelector .widgetBeltNav a {
+	display: block;
+	width: 19px;
+	height: 140px;
+	text-indent: -999em;
+	background: transparent url("../img/widgetSprite.png") -160px -240px no-repeat;
+}
+#widgetSelector .widgetBeltNav a#prev {
+	background-position: -160px -320px;
+}
+#widgetSelector .widgetBeltNav a#next {
+	background-position: -180px -320px;
+}
+#widgetSelector #widgetBelt {
+	position: relative;
+	width: 910px;
+	height: 135px;
+	float: left;
+	/* Fallback for older browsers */
+
+	background-color: #e0e0e0;
+	background: -o-linear-gradient(top, #dadada 0%, #e6e6e6 100%);
+	background: -ms-linear-gradient(top, #dadada 0%, #e6e6e6 100%);
+	background: -moz-linear-gradient(top, #dadada 0%, #e6e6e6 100%);
+	background: -webkit-linear-gradient(top, #dadada 0%, #e6e6e6 100%);
+	background: linear-gradient(top, #dadada 0%, #e6e6e6 100%);
+	border-top: 5px solid #bbbbbb;
+	overflow: hidden;
+}
+#widgetSelector #widgetColumn_0 {
+	float: left;
+	margin-top: 15px;
+	overflow: hidden;
+}
+#widgetSelector #widgetColumn_0 .widget {
+	width: 133px;
+	height: 78px;
+	float: left;
+	padding: 18px 2px 2px 23px;
+	margin: 0 16px 0 8px;
+	background: transparent url("../img/widgetSprite.png") 0 -320px no-repeat;
+	cursor: pointer;
+}
+#widgetSelector #widgetColumn_0 .widget h3 {
+	font-size: 1.1666666666666667em;
+}
+#widgetSelector #widgetColumn_0 .widget .toggle {
+	display: none;
+}
+#widgetSelector #widgetColumn_0 .widget .widgetContent {
+	display: none;
+}
+/* Button to open customizable widgets menu
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#widgetBeltToggle {
+	width: 950px;
+	margin-left: -5px;
+	background-color: #e6e6e6;
+	border-top: 5px solid #c61017;
+	overflow: hidden;
+}
+#widgetBeltToggle .button {
+	padding-bottom: 5px;
+	/* Fallback for older browsers */
+
+	background-color: #cc1017;
+	background: -o-linear-gradient(top, #c61017 0%, #d21118 100%);
+	background: -ms-linear-gradient(top, #c61017 0%, #d21118 100%);
+	background: -moz-linear-gradient(top, #c61017 0%, #d21118 100%);
+	background: -webkit-linear-gradient(top, #c61017 0%, #d21118 100%);
+	background: linear-gradient(top, #c61017 0%, #d21118 100%);
+	-moz-border-radius: 0 0 3px 3px;
+	-wekbit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+#widgetBeltToggle .button.open:after {
+	margin-left: 4px;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	content: "";
+	background: transparent url("../img/mainSprite.png") -596px -180px no-repeat;
+}
+#widgetBeltToggle .button.close:after {
+	margin-left: 4px;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	content: "";
+	background: transparent url("../img/mainSprite.png") -596px -160px no-repeat;
+}

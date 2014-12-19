@@ -1,0 +1,57 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          VROUWEN           vrouwenvoetbalutrecht.nl             *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Basic styles
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default background image
+html { background-image:url("../img/vrouwen/background.jpg"); }*/
+/* Header
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Vrouwen logo */
+#logo {
+	background-image: url("../img/vrouwen/logo.png");
+}
+#headerImage {
+	background-image: url("../img/vrouwen/header.jpg");
+}
+/* Portal sites navigation
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#portalNav li {
+	background-image: url("../img/vrouwen/header.jpg");
+}
+#portalNav .vrouwen {
+	height: 33px;
+	margin-top: 0;
+	z-index: 7;
+	-moz-border-radius: 3px 3px 0 0;
+	-wekbit-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background-position: -572px 0;
+}
+#portalNav .vrouwen a {
+	text-shadow: 1px  1px 1px #000, 0 0 1px #000;
+}
+#portalNav .vrouwen a:hover,
+#portalNav .vrouwen a:focus {
+	color: #ff0;
+	background-color: transparent;
+}
+/** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+		Vrouwen specific classes
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** **/
+/* Social Media widget has extra YouTube button */
+#socialmediaWidget ul {
+	margin-top: 25px;
+}
+#socialmediaWidget a.youtube {
+	color: #4c4c4c;
+	/* Fallback for older browsers */
+
+	text-shadow: 0 -1px 0 #ffffff;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2);
+	background-position: 0 -240px;
+}
+#socialmediaWidget a.youtube:hover {
+	background-position: 0 -280px;
+}

@@ -1,0 +1,384 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          FCU Business      fcutrechtbusiness.nl                 *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Basic styles
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default background image
+html { background-image:url("../img/business/background.jpg"); }*/
+/* Header
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default logo
+#logo { background-image:url("../img/business/logo.png"); }*/
+#headerImage {
+	background-image: url("../img/business/header.jpg");
+}
+/* Portal sites navigation
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#portalNav li {
+	background-image: url("../img/business/header.jpg");
+}
+#portalNav .business {
+	height: 33px;
+	margin-top: 0;
+	z-index: 7;
+	-moz-border-radius: 3px 3px 0 0;
+	-wekbit-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background-position: -446px 0;
+}
+#portalNav .business a {
+	text-shadow: 1px  1px 1px #000, 0 0 1px #000;
+}
+#portalNav .business a:hover,
+#portalNav .business a:focus {
+	color: #ff0;
+	background-color: transparent;
+}
+/* Business layout
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#content {
+	background-image: url("../img/business/contentBg.jpg");
+}
+#contentWrap {
+	width: 940px;
+}
+#contentColumn h1 {
+	width: 610px;
+}
+.contentItem {
+	width: 595px;
+}
+#sidebarRight {
+	width: 315px;
+	top: 0;
+}
+/** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+		Business specific classes
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** **/
+/* Member login
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#topLogin {
+	width: 925px;
+	padding: 5px 5px 5px 10px;
+	line-height: 31px;
+	color: #fff;
+	background-color: #000;
+	border: 5px solid #fff;
+	border-bottom: none;
+	overflow: hidden;
+}
+#topLogin span {
+	font-weight: bold;
+}
+#topLogin .profile {
+	color: #fff;
+}
+#topLogin .profile:hover {
+	text-decoration: underline;
+}
+#topLogin label {
+	margin-right: 5px;
+	line-height: 31px;
+}
+#topLogin label:after {
+	content: ':';
+}
+#topLogin input {
+	width: 140px;
+	padding: 5px;
+}
+#topLogin .login-info {
+	float: left;
+}
+#topLogin .login-fields {
+	float: right;
+}
+#topLogin .login-fields li {
+	float: left;
+	margin-left: 5px;
+}
+#topLogin .login-error {
+	float: right;
+	clear: right;
+}
+#topLogin .login-error p {
+	color: #ff0;
+}
+/* Forgot password
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#auth-users-passwordResetForm {
+	display: block;
+	float: left;
+	margin: 80px 0 0 25px;
+}
+#auth-users-passwordResetForm label {
+	margin-right: 15px;
+	line-height: 31px;
+}
+#auth-users-passwordResetForm label:after {
+	content: ":";
+}
+#auth-users-passwordResetForm .submit {
+	display: inline-block;
+	float: left;
+	padding: 0 12px;
+	line-height: 27px;
+	font-weight: bold;
+	color: #f3f3f3;
+	/* Fallback for older browsers */
+
+	text-shadow: 0 -1px 0 #000000;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	/* Fallback for older browsers */
+
+	background-color: #da161d;
+	background: -o-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -ms-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -moz-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -webkit-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	-moz-border-radius: 3px;
+	-wekbit-border-radius: 3px;
+	border-radius: 3px;
+}
+#auth-users-passwordResetForm .submit:hover,
+#auth-users-passwordResetForm .submit:focus {
+	color: #fff;
+	/* Fallback for older browsers */
+
+	background-color: #ee282f;
+	background: -o-linear-gradient(top, #ef343b 0%, #ed1c24 100%);
+	background: -ms-linear-gradient(top, #ef343b 0%, #ed1c24 100%);
+	background: -moz-linear-gradient(top, #ef343b 0%, #ed1c24 100%);
+	background: -webkit-linear-gradient(top, #ef343b 0%, #ed1c24 100%);
+	background: linear-gradient(top, #ef343b 0%, #ed1c24 100%);
+}
+#auth-users-passwordResetForm .fieldMsgError,
+#auth-users-passwordResetForm .formMsg.msgError {
+	display: block;
+	position: absolute;
+	margin-top: 40px;
+	color: #f00;
+}
+/* Sidebar on the right
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+.sidebar {
+	background-color: #e6e6e6;
+	margin-bottom: 20px;
+}
+.sidebar h3 {
+	padding-left: 50px;
+	font-size: 1.1666666666666667em;
+	line-height: 40px;
+	color: #fff;
+	background: #000000 url("../img/business/activities-icon.png") 10px 7px no-repeat;
+}
+.sidebar h4 {
+	font-weight: bold;
+	color: #000;
+}
+.sidebar .sidebarListItem {
+	display: block;
+	padding: 10px 15px;
+	border-bottom: 1px solid #dadada;
+	overflow: hidden;
+}
+.sidebar .sidebarListItem h4,
+.sidebar .sidebarListItem strong,
+.sidebar .sidebarListItem p {
+	margin-bottom: .5em;
+}
+.sidebar .sidebarListItem .button {
+	float: right;
+}
+.sidebar#sidebarParticipation label {
+	display: none;
+}
+.sidebar#sidebarParticipation input {
+	width: 189px;
+}
+.sidebar#sidebarParticipation .hidden {
+	display: none;
+}
+.sidebar#sidebarParticipation #guestList {
+	margin: .5em 10px;
+}
+.sidebar#sidebarParticipation #guestList li {
+	border-bottom: 1px solid #f3f3f3;
+	padding: 2px 0;
+}
+.sidebar#sidebarParticipation #guestList .removeGuest {
+	display: inline-block;
+	float: right;
+	font-weight: bold;
+	color: #c61017;
+}
+/* Edit profile data
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+.editDetails {
+	/* Image upload */
+
+	/* Save button */
+
+}
+.editDetails fieldset {
+	margin-bottom: 40px;
+	padding: 10px;
+	background-color: #f3f3f3;
+	overflow: hidden;
+}
+.editDetails legend {
+	display: block;
+	font-size: 1.1em;
+	font-weight: bold;
+	text-shadow: 0 1px 2px #fff;
+}
+.editDetails label {
+	text-shadow: 0 1px 0 #fff;
+}
+.editDetails #imageUpload img,
+.editDetails #imageUpload .fileUpload {
+	float: left;
+}
+.editDetails #imageUpload .fileUpload {
+	margin-left: 15px;
+}
+.editDetails #imageUpload .fileUpload .fileQueue,
+.editDetails #imageUpload .fileUpload .fileQueue li {
+	width: 100%;
+	border: none;
+}
+.editDetails #imageUpload .fileUpload .fileQueue .name {
+	color: #0072bc;
+}
+.editDetails #imageUpload .fileQueue .size {
+	display: none;
+}
+.editDetails #imageUpload .buttons {
+	margin: 15px 15px 0 0;
+}
+.editDetails #imageUpload .selectButton,
+.editDetails #imageUpload .uploadButton {
+	display: inline-block;
+}
+.editDetails .formElement-submitButton {
+	margin-top: 40px;
+}
+.editDetails .formElement-submitButton .button {
+	padding: 0 24px;
+}
+/* Members list
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#memberFilter {
+	width: 475px;
+	margin-left: 40px;
+	margin-bottom: 2em;
+	padding-left: 40px;
+	padding-bottom: 20px;
+	background-color: #f3f3f3;
+}
+#memberList {
+	border-top: 1px solid #dadada;
+}
+#memberList .listItem:hover {
+	color: #c61017;
+}
+#memberList .memberData {
+	overflow: hidden;
+}
+#memberList .memberData li {
+	min-height: 1px;
+	float: left;
+	margin-left: 10px;
+}
+#memberList .memberData li:first-child {
+	margin-left: 0;
+}
+#memberList .memberData li.memberLogo {
+	width: 35px;
+}
+#memberList .memberData li.memberName {
+	width: 210px;
+}
+#memberList .memberData li.memberAddress {
+	width: 150px;
+}
+#memberList .memberData li.memberPhone {
+	width: 140px;
+}
+#memberList img {
+	width: 32px;
+	height: 32px;
+}
+/* Member's profile
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#memberProfile > div {
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+#memberProfile h4 {
+	font-size: 1.5em;
+	color: #083471;
+}
+#memberProfile img {
+	float: right;
+	margin-left: 10px;
+}
+#memberProfile ul {
+	margin-left: 15px;
+}
+#memberProfile .label {
+	display: inline-block;
+	width: 120px;
+}
+#memberProfile .memberDescription {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e6e6e6;
+}
+#memberProfile .memberContact img {
+	height: 90px;
+}
+#memberProfile .leaveMsg {
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#memberProfile #contactForm {
+	display: none;
+	margin-left: 15px;
+}
+#memberProfile #contactForm .formElement.formElement-button {
+	margin-left: 120px;
+}
+#memberProfile .show-all-members {
+	height: 30px;
+	float: right;
+	margin: 40px 0 10px;
+}
+/* Activities
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#activitiesList .listItem {
+	overflow: hidden;
+}
+#activitiesList p {
+	margin-bottom: .5em;
+}
+#activitiesList .button {
+	float: right;
+}
+/* Download PDF buttons on content pages.
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+.downloadPdf li {
+	display: block;
+	float: left;
+	margin: 0 20px 0 5px;
+}
+.downloadPdf img {
+	display: block;
+	margin-bottom: 5px;
+	border: 1px solid #ccc;
+}
+.downloadPdf .button {
+	width: 160px;
+	margin-left: 1px;
+}

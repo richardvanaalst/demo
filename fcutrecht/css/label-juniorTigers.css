@@ -1,0 +1,88 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          Junior Tigers     juniortigers.nl                      *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Basic styles
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Junior Tigers background image */
+html {
+	background-image: url("../img/juniortigers/background.jpg");
+}
+/* Header
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default logo
+#logo { background-image:url("../img/juniortigers/logo.png"); }*/
+#headerImage {
+	background-image: url("../img/juniortigers/header.jpg");
+}
+/* Portal sites navigation
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#portalNav li {
+	background-image: url("../img/juniortigers/header.jpg");
+}
+#portalNav .juniortigers {
+	height: 33px;
+	margin-top: 0;
+	z-index: 7;
+	-moz-border-radius: 3px 3px 0 0;
+	-wekbit-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background-position: -824px 0;
+}
+#portalNav .juniortigers a {
+	text-shadow: 1px  1px 1px #000, 0 0 1px #000;
+}
+#portalNav .juniortigers a:hover,
+#portalNav .juniortigers a:focus {
+	color: #ff0;
+	background-color: transparent;
+}
+/** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+		Junior Tigers specific classes
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** **/
+/* Poll widget on homepage */
+.widget.poll form {
+	padding: 10px;
+}
+.widget.poll h1 {
+	font-size: 1.3333333333333332em;
+	color: #083471;
+}
+.widget.poll .mpRadioButtonInput,
+.widget.poll .mpRadioButtonText {
+	padding: 5px 0 0 5px;
+}
+.widget.poll .submitCell input {
+	display: inline-block;
+	padding: 0 12px;
+	line-height: 27px;
+	font-weight: bold;
+	color: #f3f3f3;
+	/* Fallback for older browsers */
+
+	text-shadow: 0 -1px 0 #000000;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	/* Fallback for older browsers */
+
+	background-color: #a4a4a4;
+	background: -o-linear-gradient(top, #bbbbbb 0%, #8d8d8d 100%);
+	background: -ms-linear-gradient(top, #bbbbbb 0%, #8d8d8d 100%);
+	background: -moz-linear-gradient(top, #bbbbbb 0%, #8d8d8d 100%);
+	background: -webkit-linear-gradient(top, #bbbbbb 0%, #8d8d8d 100%);
+	background: linear-gradient(top, #bbbbbb 0%, #8d8d8d 100%);
+	-moz-border-radius: 3px;
+	-wekbit-border-radius: 3px;
+	border-radius: 3px;
+}
+.widget.poll .submitCell input:hover,
+.widget.poll .submitCell input:focus {
+	color: #fff;
+	/* Fallback for older browsers */
+
+	background-color: #cbcbcb;
+	background: -o-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: -ms-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: -moz-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: -webkit-linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+	background: linear-gradient(top, #dadada 0%, #bbbbbb 100%);
+}

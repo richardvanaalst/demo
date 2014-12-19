@@ -1,0 +1,791 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          FC UTRECHT        fcutrecht.nl                         *
+ *          Copyright:        2012                                 *
+ *          Author:           Internetbureau i-Aspect              *
+ *          Website:          i-aspect.com                         *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#contentWrap {
+	background-position: 5px -30px;
+}
+.headerImg {
+	display: none;
+}
+.breadcrumbs {
+	top: 5px;
+}
+#contentItem {
+	width: 720px;
+}
+#content {
+	background: url("../img/kaartverkoop/single-col-bg.png") repeat-x scroll 5px top #ffffff;
+}
+#PromoBlock {
+	margin-top: 10px;
+	overflow: hidden;
+	width: 719px;
+}
+/***** Kaartverkoop *****/
+#PromoBlock.ticketsale {
+	background: url("../img/kaartverkoop/homematches_header.jpg") no-repeat scroll left top #e9e9e9;
+	color: #525151;
+	height: 78px;
+	padding: 207px 0 0 0;
+}
+#PromoBlock.ticketsale h2 {
+	color: #ffffff;
+	font-size: 24px;
+	margin: 0;
+	padding: 30px 50px;
+	background: rgba(0, 0, 0, 0.5);
+}
+#PromoBlock.ticketsale h2 a {
+	display: block;
+	width: 719px;
+	height: 285px;
+}
+#PromoBlock.ticketsale p {
+	display: block;
+	float: left;
+	width: 400px;
+	font-size: 13px;
+	padding: 18px 59px 0 20px;
+	margin-top: 0;
+}
+#playSchedule.ticketsale {
+	background: url("../img/kaartverkoop/gradientbackground.png") no-repeat #eeeeee;
+	float: left;
+	width: 239px;
+	padding-bottom: 20px;
+	text-align: center;
+	text-shadow: 0 1px 0 #ffffff;
+	overflow: hidden;
+}
+#playSchedule.ticketsale h3 {
+	color: #ffffff;
+	background: url("../img/kaartverkoop/spanBackground.png") repeat-x left top;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	background-color: #e80007;
+	padding: 14px 16px 14px 16px;
+	text-shadow: 0 -1px 0 #662222;
+	margin-top: 4px;
+}
+#playSchedule.ticketsale ul {
+	margin: 10px 0 20px 8px;
+	overflow: hidden;
+}
+#playSchedule.ticketsale ul li {
+	width: 230px;
+	padding: 4px 0;
+	text-align: left;
+	float: left;
+}
+#playSchedule.ticketsale ul li span {
+	width: 160px;
+	float: left;
+}
+#playSchedule.ticketsale ul li span.date {
+	width: 60px;
+}
+#playSchedule.ticketsale a.button {
+	float: none;
+}
+#orderNowBlock.orderTicketbox h3 {
+	font-size: 30px;
+	display: block;
+	color: #424242;
+	text-align: center;
+	margin-top: 0;
+}
+#orderNowBlock.orderTicketbox h3 span {
+	font-size: 16px;
+}
+#orderNowBlock.orderTicketbox {
+	text-align: center;
+	float: left;
+	width: 719px;
+	margin-top: 16px;
+	text-shadow: 0 1px 0 #ffffff;
+	padding-bottom: 20px;
+}
+#orderNowBlock.orderTicketbox .buttonGreen {
+	display: block;
+	color: #366304;
+	font-size: 16px;
+	line-height: 33px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	height: 33px;
+	float: right;
+	padding: 10px 20px;
+	border: 1px solid #579319;
+	/* Fallback for older browsers */
+
+	background-color: #78c721;
+	background: -o-linear-gradient(top, #8fed28 0%, #61a119 100%);
+	background: -ms-linear-gradient(top, #8fed28 0%, #61a119 100%);
+	background: -moz-linear-gradient(top, #8fed28 0%, #61a119 100%);
+	background: -webkit-linear-gradient(top, #8fed28 0%, #61a119 100%);
+	background: linear-gradient(top, #8fed28 0%, #61a119 100%);
+	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+	-wekbit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+#orderNowBlock.orderTicketbox .buttonGreen:hover {
+	-moz-box-shadow: 0 25px 20px rgba(255, 255, 255, 0.2) inset;
+	-wekbit-box-shadow: 0 25px 20px rgba(255, 255, 255, 0.2) inset;
+	box-shadow: 0 25px 20px rgba(255, 255, 255, 0.2) inset;
+}
+#orderNowBlock.orderTicketbox .branches {
+	display: block;
+	text-decoration: underline;
+	float: right;
+	clear: right;
+	margin-top: 8px;
+	color: #6e6e6e;
+}
+.descriptionBlock.ticketsale {
+	background-color: #eeeeee;
+	width: 225px;
+	float: left;
+	overflow: hidden;
+	margin-top: 12px;
+}
+.descriptionBlock.ticketsale.mid {
+	margin: 12px 20px;
+}
+.descriptionBlock.ticketsale span {
+	color: #ffffff;
+	background: url("../img/kaartverkoop/spanBackground.png") repeat-x left top;
+	font-weight: bold;
+	display: block;
+	background-color: #e80007;
+	padding: 14px 16px 14px 16px;
+	text-shadow: 0 -1px 0 #662222;
+}
+.descriptionBlock.ticketsale p {
+	padding: 0 16px 0 16px;
+	margin-bottom: 15px;
+}
+.descriptionBlock.ticketsale a {
+	display: block;
+	padding: 0 16px 0 16px;
+	margin-bottom: 15px;
+}
+/***** Seizoenkaarten *****/
+/* Seizoenskaarten */
+#PromoBlock.seasonpass {
+	padding: 20px 0;
+	background: #e9e9e9;
+}
+#PromoBlock.seasonpass h2 {
+	margin: 0;
+	padding: 20px 0 0 0;
+	color: #333;
+	font-size: 34px;
+	text-shadow: 0 1px 0 #fff;
+	text-align: center;
+}
+#PromoBlock.seasonpass p {
+	margin: 0;
+	padding: 20px 0 20px 30px;
+	line-height: 18px;
+	color: #404040;
+	text-shadow: 0 1px #fff;
+	float: left;
+}
+#PromoBlock.seasonpass img {
+	margin-top: 20px;
+	display: block;
+	float: right;
+}
+.promoButtonWrap.seasonpass {
+	clear: both;
+	background: #ffffff url(http://fcutrecht.nl/var/storage/seizoenskaarten/14029_seizoenskaart-bg-bottom.png) no-repeat left top;
+	overflow: hidden;
+}
+.promoButtonWrap.seasonpass a {
+	display: block;
+	float: left;
+	padding: 11px 0;
+	color: #fff;
+	font-size: 14px;
+	line-height: 36px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	text-align: center;
+	text-decoration: none;
+	background-image: url(http://fcutrecht.nl/var/storage/seizoenskaarten/14027_button-bg.png);
+	background-repeat: no-repeat;
+}
+.promoButtonWrap.seasonpass a:hover {
+	text-decoration: underline;
+}
+.printForm.seasonpass {
+	width: 205px;
+	margin-left: 170px;
+	border-right: 1px solid #ed3333;
+	background-position: left top;
+	-webkit-border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	-o-border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
+}
+.downloadFlyer {
+	width: 170px;
+	border-left: 1px solid #b20000;
+	background-position: right top;
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	-o-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+}
+#seasonpassInfo {
+	overflow: hidden;
+	margin-top: 20px;
+	line-height: 18px;
+}
+.infoLeft {
+	width: 320px;
+	float: left;
+}
+.infoLeft address {
+	display: block;
+	margin: 10px 0 0 20px;
+}
+.infoRightSmall {
+	width: 180px;
+	float: right;
+}
+.infoRightSmall a {
+	font-weight: bold;
+	color: #ce0000;
+}
+/***** Thuiswedstrijden *****/
+#PromoBlock.homematch {
+	background: url("../img/kaartverkoop/homematches_header.jpg") no-repeat scroll left top #ededed;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 719px;
+	color: #525151;
+	padding-bottom: 20px;
+}
+#PromoBlock.homematch h2 {
+	color: #ffffff;
+	font-size: 24px;
+	height: 265px;
+	margin: 0;
+	text-shadow: 0 2px 2px #000000;
+	margin: 20px 0 0 20px;
+}
+#PromoBlock.homematch p {
+	display: block;
+	font-size: 13px;
+	padding: 20px 20px 0 20px;
+	margin-top: 0;
+}
+#PromoBlock.homematch p.shadow {
+	background: url(../img/kaartverkoop/descriptionShadow.png) no-repeat top center;
+}
+#PromoBlock.homematch #orderNowBlock h2 {
+	font-size: 30px;
+	display: block;
+	padding: 40px 0 0 0;
+	text-align: center;
+	color: #424242;
+	text-shadow: 0 1px 0 #ffffff;
+	float: left;
+}
+#PromoBlock.homematch #orderNowBlock h3 {
+	font-size: 20px;
+	display: block;
+	color: #424242;
+	text-align: center;
+	margin-top: 25px;
+	float: left;
+	padding-left: 20px;
+}
+#PromoBlock.homematch #orderNowBlock {
+	background: #ffffff;
+	overflow: hidden;
+	text-shadow: 0 1px 0 #ffffff;
+	padding-bottom: 20px;
+}
+#PromoBlock.homematch #orderNowBlock .button {
+	background: #11d07d;
+	background: -moz-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #11d07d), color-stop(100%, #00b264));
+	background: -webkit-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -o-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -ms-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#11d07d', endColorstr='#00b264', GradientType=0);
+	background: linear-gradient(top, #11d07d 0%, #00b264 100%);
+	margin: 20px 0 0 30px;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 1px #555;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 20px 8px 20px;
+	text-shadow: 0 1px 0 #3b3b3b;
+}
+#PromoBlock.homematch #orderNowBlock .button:hover {
+	background: #11d07d;
+	background: -moz-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #04b667), color-stop(100%, #00b264));
+	background: -webkit-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -o-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -ms-linear-gradient(top, #04b667 0%, #00b264 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#04b667', endColorstr='#00b264', GradientType=0);
+	background: linear-gradient(top, #04b667 0%, #00b264 100%);
+	margin: 20px 0 0 30px;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 1px #555;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 20px 8px 20px;
+	text-shadow: 0 1px 0 #3b3b3b;
+}
+#PromoBlock.homematch #ticketsalePromoBlock span {
+	display: block;
+	margin-top: 0;
+	float: right;
+	font-weight: bold;
+}
+/***** Uitwedstrijden *****/
+#PromoBlock.outmatch {
+	background: url("../img/kaartverkoop/outmatches_header.jpg") no-repeat scroll left top #ededed;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 719px;
+	color: #525151;
+	padding-bottom: 20px;
+}
+#PromoBlock.outmatch h2 {
+	color: #ffffff;
+	font-size: 24px;
+	height: 265px;
+	margin: 0;
+	text-shadow: 0 2px 2px #000000;
+	margin: 20px 0 0 20px;
+}
+#PromoBlock.outmatch p {
+	display: block;
+	font-size: 13px;
+	padding: 20px 20px 0 20px;
+	margin-top: 0;
+}
+#PromoBlock.outmatch p.shadow {
+	background: url(../img/kaartverkoop/descriptionShadow.png) no-repeat top center;
+}
+#orderNowBlock h2 {
+	color: #424242;
+	font-size: 24px;
+	text-align: center;
+	text-shadow: 0 1px 0 #ffffff;
+	display: block;
+	padding: 0;
+	float: left;
+	margin: 16px 0 0 30px;
+}
+#orderNowBlock h3 {
+	font-size: 20px;
+	display: block;
+	color: #424242;
+	text-align: center;
+	margin-top: 25px;
+	float: left;
+	padding-left: 20px;
+}
+#PromoBlock.outmatch #orderNowBlock {
+	background: #ffffff;
+	overflow: hidden;
+	text-shadow: 0 1px 0 #ffffff;
+	padding-bottom: 20px;
+}
+#PromoBlock.outmatch #orderNowBlock .button {
+	background: #11d07d;
+	background: -moz-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #11d07d), color-stop(100%, #00b264));
+	background: -webkit-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -o-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -ms-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#11d07d', endColorstr='#00b264', GradientType=0);
+	background: linear-gradient(top, #11d07d 0%, #00b264 100%);
+	margin: 20px 0 0 30px;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 1px #555;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 20px 8px 20px;
+	text-shadow: 0 1px 0 #3b3b3b;
+}
+#PromoBlock.outmatch #orderNowBlock .button:hover {
+	background: #11d07d;
+	background: -moz-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #04b667), color-stop(100%, #00b264));
+	background: -webkit-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -o-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -ms-linear-gradient(top, #04b667 0%, #00b264 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#04b667', endColorstr='#00b264', GradientType=0);
+	background: linear-gradient(top, #04b667 0%, #00b264 100%);
+	margin: 20px 0 0 30px;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 1px #555;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 20px 8px 20px;
+	text-shadow: 0 1px 0 #3b3b3b;
+}
+#PromoBlock.outmatch #ticketsalePromoBlock span {
+	display: block;
+	margin-top: 0;
+	float: right;
+	font-weight: bold;
+}
+/***** clubkaarten *****/
+#PromoBlock.clubcard {
+	background: url("../img/kaartverkoop/kaartverkoop_clubkaart_header.jpg") no-repeat scroll left top #ffffff;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 719px;
+	color: #525151;
+	padding-bottom: 20px;
+}
+#PromoBlock.clubcard span {
+	display: block;
+	margin-top: 0;
+	float: right;
+	font-weight: bold;
+}
+#PromoBlock.clubcard h2 {
+	color: #ffffff;
+	font-size: 24px;
+	height: 215px;
+	margin: 0;
+	text-shadow: 0 2px 2px #000000;
+	margin: 20px 0 0 20px;
+}
+#PromoBlock.clubcard p {
+	display: block;
+	font-size: 12px;
+	padding: 20px 20px 0 20px;
+	margin-top: 0;
+}
+#PromoBlock.clubcard #orderNowBlock {
+	background: #ffffff;
+	overflow: hidden;
+	text-shadow: 0 1px 0 #ffffff;
+	padding-bottom: 20px;
+}
+#PromoBlock.clubcard #orderNowBlock h2 {
+	font-size: 30px;
+	display: block;
+	padding: 40px 0 0 0;
+	text-align: center;
+	color: #424242;
+	text-shadow: 0 1px 0 #ffffff;
+	float: left;
+}
+#PromoBlock.clubcard #orderNowBlock h3 {
+	font-size: 20px;
+	display: block;
+	color: #424242;
+	text-align: center;
+	margin-top: 25px;
+	float: left;
+	padding-left: 20px;
+}
+#PromoBlock.clubcard #orderNowBlock .button {
+	background: #11d07d;
+	background: -moz-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #11d07d), color-stop(100%, #00b264));
+	background: -webkit-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -o-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	background: -ms-linear-gradient(top, #11d07d 0%, #00b264 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#11d07d', endColorstr='#00b264', GradientType=0);
+	background: linear-gradient(top, #11d07d 0%, #00b264 100%);
+	margin: 20px 0 0 30px;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 1px #555;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 20px 8px 20px;
+	text-shadow: 0 1px 0 #3b3b3b;
+}
+#PromoBlock.clubcard #orderNowBlock .button:hover {
+	background: #11d07d;
+	background: -moz-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #04b667), color-stop(100%, #00b264));
+	background: -webkit-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -o-linear-gradient(top, #04b667 0%, #00b264 100%);
+	background: -ms-linear-gradient(top, #04b667 0%, #00b264 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#04b667', endColorstr='#00b264', GradientType=0);
+	background: linear-gradient(top, #04b667 0%, #00b264 100%);
+	margin: 20px 0 0 30px;
+	display: block;
+	float: left;
+	box-shadow: 0 1px 1px #555;
+	border-radius: 5px 5px 5px 5px;
+	padding: 10px 20px 8px 20px;
+	text-shadow: 0 1px 0 #3b3b3b;
+}
+#PromoBlock.clubcard #reasonsBlock {
+	background-color: #d6d6d6;
+	border-radius: 5px;
+	margin: 15px 0;
+	overflow: hidden;
+}
+#PromoBlock.clubcard #reasonsBlock ul {
+	display: block;
+	float: left;
+	text-shadow: 0 -1px 0 #ffffff;
+	font-size: 14px;
+	padding: 25px 25px 25px 0;
+	color: #2c2c2c;
+	width: 230px;
+	line-height: 18px;
+}
+#PromoBlock.clubcard #reasonsBlock .reasonsHeader {
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	font-size: 30px;
+	text-shadow: 0 1px 0 #a0a0a0;
+	width: 360px;
+	padding: 25px 60px 25px 25px;
+}
+#PromoBlock.clubcard #requestBlock {
+	background-color: #ededed;
+	border-radius: 5px;
+	margin: 15px 0;
+	overflow: hidden;
+}
+#PromoBlock.clubcard #requestBlock h3 {
+	color: #3a3a3a;
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: 0 1px 0 #ffffff;
+	padding: 15px 0 0 25px;
+	float: left;
+}
+#PromoBlock.clubcard #requestBlock p {
+	color: #2b2b2b;
+	display: block;
+	padding: 10px 0 0 25px;
+	width: 370px;
+	font-size: 12px;
+	text-shadow: 0 1px 0 #ffffff;
+	float: left;
+}
+#PromoBlock.clubcard #requestBlock .button {
+	background: #ee2200;
+	background: -moz-linear-gradient(top, #ee2200 0%, #e72000 2%, #c71b00 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ee2200), color-stop(2%, #e72000), color-stop(100%, #c71b00));
+	background: -webkit-linear-gradient(top, #ee2200 0%, #e72000 2%, #c71b00 100%);
+	background: -o-linear-gradient(top, #ee2200 0%, #e72000 2%, #c71b00 100%);
+	background: -ms-linear-gradient(top, #ee2200 0%, #e72000 2%, #c71b00 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ee2200', endColorstr='#c71b00', GradientType=0);
+	background: linear-gradient(top, #ee2200 0%, #e72000 2%, #c71b00 100%);
+	color: #FFFFFF;
+	display: block;
+	font-size: 14px;
+	margin: 25px 100px 15px 25px;
+	padding: 10px 25px 10px 25px;
+	text-shadow: 0 1px 0 #690E00;
+	float: left;
+	border-radius: 4px;
+}
+#PromoBlock.clubcard #requestBlock .button:hover {
+	background: #ee2200;
+	background: -moz-linear-gradient(top, #ee2200 0%, #e72000 2%, #c63721 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ee2200), color-stop(2%, #e72000), color-stop(100%, #c63721));
+	background: -webkit-linear-gradient(top, #ee2200 0%, #e72000 2%, #c63721 100%);
+	background: -o-linear-gradient(top, #ee2200 0%, #e72000 2%, #c63721 100%);
+	background: -ms-linear-gradient(top, #ee2200 0%, #e72000 2%, #c63721 100%);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ee2200', endColorstr='#c63721', GradientType=0);
+	background: linear-gradient(top, #ee2200 0%, #e72000 2%, #c63721 100%);
+}
+#PromoBlock.clubcard #adressBlock {
+	background: url(../img/kaartverkoop/request-background.png) no-repeat;
+	text-align: center;
+	padding: 45px 20px;
+	overflow: hidden;
+	width: 240px;
+	height: 240px;
+	margin: 15px 0 0 425px;
+	color: #838282;
+}
+#PromoBlock.clubcard #adressBlock span {
+	color: #4a4a4a;
+	font-size: 16px;
+	font-weight: normal;
+	margin-top: 30px;
+}
+#PromoBlock.clubcard #notRequired {
+	color: #7d7d7d;
+	font-size: 12px;
+	display: inline;
+	float: none;
+}
+/* Seizoenskaarten - moved from CssCode input in CMS */
+.path-kaartverkoop-seizoenkaart #content {
+	background: #ffffff url("http://fcutrecht.nl/iap/app/public/img/single-col-bg.png") repeat-x 5px top;
+}
+.path-kaartverkoop-seizoenkaart #contentWrap {
+	background-position: 5px -30px;
+}
+.path-kaartverkoop-seizoenkaart .headerImg {
+	display: none;
+}
+.path-kaartverkoop-seizoenkaart #contentItem {
+	width: 720px;
+}
+.path-kaartverkoop-seizoenkaart .breadcrumbs {
+	top: 5px;
+}
+#seasonpassPromoBlock {
+	width: 719px;
+	overflow: hidden;
+	margin-top: 10px;
+	background: #e9e9e9 url(http://fcutrecht.nl/var/storage/seizoenskaarten/14030_seizoenskaarten-header.jpg) no-repeat left top;
+}
+#seasonpassPromoBlock h2 {
+	margin: 0;
+	padding: 20px 0 174px 0;
+	color: #fff;
+	font-size: 34px;
+	text-shadow: 0 2px 2px #000;
+	text-align: center;
+}
+#seasonpassPromoBlock p {
+	margin: 0;
+	width: 260px;
+	padding: 20px 0 20px 30px;
+	line-height: 18px;
+	color: #404040;
+	text-shadow: 0 1px #fff;
+	float: left;
+}
+#seasonpassPromoBlock img {
+	margin-top: 20px;
+	display: block;
+	float: right;
+}
+.promoButtonWrap {
+	clear: both;
+	padding-left: 60px;
+	overflow: hidden;
+}
+.promoButtonWrap a {
+	display: inline-block;
+	color: #fff;
+	padding: 0 16px;
+	font-size: 14px;
+	line-height: 38px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+	margin: 0 4px;
+	border: 1px solid #b2080e;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	/* Fallback for older browsers */
+
+	background-color: #da161d;
+	background: -o-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -ms-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -moz-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -webkit-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	-moz-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+	-wekbit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+	box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+}
+.promoButtonWrap a.dlLeft {
+	border-right: 1px solid #a44;
+	-moz-border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+}
+.promoButtonWrap a.dlRight {
+	border-left: 1px solid #d66;
+	-moz-border-radius: 0 4px 4px 0;
+	-webkit-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+}
+.promoButtonWrap a:hover {
+	text-decoration: underline;
+}
+.printForm {
+	width: 205px;
+	margin-left: 170px;
+	border-right: 1px solid #ed3333;
+	background-position: left top;
+	-webkit-border-radius: 6px 0 0 6px;
+	-moz-border-radius: 6px 0 0 6px;
+	-o-border-radius: 6px 0 0 6px;
+	border-radius: 6px 0 0 6px;
+}
+.downloadFlyer {
+	width: 170px;
+	border-left: 1px solid #b20000;
+	background-position: right top;
+	-webkit-border-radius: 0 6px 6px 0;
+	-moz-border-radius: 0 6px 6px 0;
+	-o-border-radius: 0 6px 6px 0;
+	border-radius: 0 6px 6px 0;
+}
+#seasonpassInfo {
+	overflow: hidden;
+	margin-top: 20px;
+	line-height: 18px;
+}
+.infoLeft {
+	width: 320px;
+	float: left;
+}
+.infoLeft address {
+	display: block;
+	margin: 10px 0 0 20px;
+}
+.infoRightSmall {
+	width: 390px;
+	float: right;
+}
+.infoRightSmall a {
+	font-weight: bold;
+	color: #ce0000;
+}
+.mailbutton {
+	display: inline-block;
+	color: #fff;
+	padding: 0 16px;
+	font-size: 14px;
+	line-height: 38px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+	margin: 10px 4px 0;
+	border: 1px solid #b2080e;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	/* Fallback for older browsers */
+
+	background-color: #da161d;
+	background: -o-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -ms-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -moz-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: -webkit-linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	background: linear-gradient(top, #ed1c24 0%, #c61017 100%);
+	-moz-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+	-wekbit-box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+	box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+}
+.mailbutton:hover {
+	color: #fff;
+	text-decoration: underline;
+}

@@ -1,0 +1,39 @@
+/*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***\
+ *          FC4YOU            fc4you.nl                            *
+ *                                                                 *
+\*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Basic styles
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* Default background image
+html { background-image:url("../img/fc4you/background.jpg"); }*/
+/* Header
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+/* FC4You logo */
+#logo {
+	background-image: url("../img/fc4you/logo.png");
+}
+#headerImage {
+	background-image: url("../img/fc4you/header.jpg");
+}
+/* Portal sites navigation
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***/
+#portalNav li {
+	background-image: url("../img/fc4you/header.jpg");
+}
+#portalNav .fc4you {
+	height: 33px;
+	margin-top: 0;
+	z-index: 7;
+	-moz-border-radius: 3px 3px 0 0;
+	-wekbit-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	background-position: -698px 0;
+}
+#portalNav .fc4you a {
+	text-shadow: 1px  1px 1px #000, 0 0 1px #000;
+}
+#portalNav .fc4you a:hover,
+#portalNav .fc4you a:focus {
+	color: #ff0;
+	background-color: transparent;
+}

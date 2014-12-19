@@ -1,0 +1,153 @@
+/* Common
+*****************************************************************************/
+body {
+	background: #fff;
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Times New Roman", serif;
+}
+h1 {
+	font-size: 16pt;
+}
+h2 {
+	font-size: 14pt;
+}
+h3 {
+	font-size: 13pt;
+}
+h4 {
+	font-size: 12pt;
+}
+#topNav,
+#tabNav,
+#navigation,
+#footer,
+#skyscraperContainer,
+#pageOptionDrowDown,
+#logo p,
+.headerImg,
+#header,
+#matchPhotos,
+.linkBlock,
+.pageOptions {
+	display: none;
+}
+#logo {
+	border-bottom: 1px solid #999;
+	padding-bottom: 1em;
+	text-align: center;
+	margin-bottom: 0px;
+}
+#logo a {
+	height: auto;
+	margin: 0;
+	position: relative;
+	width: auto;
+}
+#logo img {
+	border: 0;
+}
+#logo strong {
+	color: #666;
+}
+#content {
+	width: auto;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	float: none;
+	color: #000;
+	background: none;
+	overflow: visible;
+	font-size: 1em;
+}
+#contentItem {
+	float: none;
+	margin: 0;
+	width: auto;
+	height: auto;
+	overflow: visible;
+}
+#contentItem h1 {
+	margin: 0 0 20px 0;
+	padding: 0;
+	white-space: inherit !important;
+	overflow: visible;
+}
+#contentItem p a[href]:after {
+	content: "(http://www.fc-utrecht.nl" attr(href) ")";
+}
+#footer {
+	border-top: 1px solid #999;
+	margin-top: 30px;
+}
+/* Homepage
+*****************************************************************************/
+#userSubscribe,
+#widgetBottomBlock,
+#toggleWidgetBelt,
+#eredivisieLiveWidget,
+.widgetContent img {
+	display: none;
+}
+.widgetContent .list {
+	list-style: none;
+}
+div.slide {
+	background: #fff !important;
+}
+/* Content pages
+*****************************************************************************/
+#structureNavigationContainer,
+#contentItem form,
+#contentItem iframe,
+#pageOptions,
+#pagingContainer,
+#linkBlocks,
+#relatedNews,
+#lightbox,
+#tellafriend,
+#tellafriendClosed,
+#tellafriendOpen,
+#tellAFriendForm,
+#tellafriendClose,
+#closedLink,
+.pagingContainer,
+.subContent {
+	display: none;
+}
+#container {
+	padding: 0;
+	width: auto;
+}
+#contentWrap {
+	margin-top: 0px;
+	width: auto;
+	background: none;
+	float: none;
+}
+#tableMatch {
+	border: 1px solid #999;
+	width: 100%;
+}
+#tableMatch td,
+#tableMatch th {
+	border: 1px solid #999;
+	padding: 5px;
+}
+.itemDate {
+	display: block;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #999;
+}
+#relatedNews {
+	list-style: none;
+}
+#newsItemList {
+	overflow: visible;
+}
